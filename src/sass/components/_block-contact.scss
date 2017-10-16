@@ -1,0 +1,49 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	components/_block-contact.scss
+//  Date:	2017-02-24(UTC+9)
+//  Note:	
+// ===================================================================
+.block-contact {
+	padding: $base_padding*6 0;
+	background: $base_block-contact_color;
+	text-align: center;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		@include fontsize(24);
+		color: $base_text2_color;
+		
+	}
+	@include element(lead) {
+		margin-bottom: 2rem;
+		font-weight: bold;
+	}
+	@include element(number) {
+		margin-bottom: 2rem;
+		line-height: 1;
+		font-weight: bold;
+		@include fontsize(24);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@include fontsize(40);
+		}
+		> a {
+			position: relative;
+			color: #e95469;
+			&:before {
+				position: relative;
+				display: inline-block;
+				content: url(../img/ico_block-contact.png);
+				width: 53px;
+				height: 43px;
+				margin: 0 10px 0 0;
+			}
+			&:link,&:visited {
+				text-decoration: none!important;
+			}
+		}
+	}
+	@include element(foot) {}
+}

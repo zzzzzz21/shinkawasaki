@@ -1,0 +1,155 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_top.scss
+//  Date:	2017-04-30(UTC+9)
+//  Note:	
+// ===================================================================
+.block-home {
+	@extend .block;
+	.block__title span:after {
+		display: block;
+		width: 6%;
+		height: 6px;
+		margin: 0 auto;
+		content: '';
+		background-image: linear-gradient(
+			-45deg,
+			#fff 25%,
+			#c7c2c2 25%, #c7c2c2 50%,
+			#fff 50%, #fff 75%,
+			#c7c2c2 75%, #c7c2c2
+		);
+		background-size: 4px 4px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 10%;
+		}
+	}
+}
+
+
+// -------------------------------------------------------------------
+// リップルについて
+// -------------------------------------------------------------------
+.block-about {
+	background-image: url(../../img/bg_about.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	color: $base_text2_color;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		background-image: url(../../img/bg_about-sp.jpg);
+		padding-right: 2em;
+		padding-left: 2em;
+		text-align: center;
+	}
+}
+
+
+// -------------------------------------------------------------------
+// サービス
+// -------------------------------------------------------------------
+.block-service {
+	background: url(#{$image_path}bg_block.gif) 0 0 no-repeat;
+	background-size: cover;
+	@include element(unit) {
+		@include clearfix;
+		& + & {
+			margin-top: 6em;
+		}
+		@include element(aside) {
+			box-sizing: border-box;
+			width: 400px;
+			margin-right: 50px;
+			float: left;
+			img {
+				box-sizing: border-box;
+				max-width: 100%;
+				height: auto;
+				border-radius: 8px;
+				border: 1px solid $base_border_color;
+			}
+		}
+		@include element(body) {
+			overflow: hidden;
+			text-align: left;
+			color: $base_text2_color;
+		}
+		@include element(title) {
+			@include fontsize(30);
+			margin-bottom: .3em;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(24);
+			}
+		}
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include element(aside) {
+				width: 100%;
+				margin: 0 0 1em;
+				float: none;
+			}
+			@include element(body) {
+			}
+		}
+	}
+	@include element(link) {
+		margin-top: 3em;
+		@include element(item) {
+			> a {
+				display: block;
+				color: $base_text2_color;
+				&:hover {
+					opacity: .8;
+				}
+			}
+			& + & {
+				margin-top: 2em;
+			}
+		}
+		$dayservice-color: #ff9731;
+		$color: #e95469;
+		@include modifier(sub) {
+			display: block;
+			padding: .8rem 2rem;
+			background: $color;
+			border-radius: 6px 6px 0 0;
+			.is-dayservice & {
+				background: $dayservice-color;
+			}
+		}
+		@include modifier(main) {
+			display: block;
+			position: relative;
+			padding: .8rem 2rem;
+			background: lighten($color, 24%);
+			border-radius: 0 0 6px 6px;
+			@include fontsize(24);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(18);
+			}
+			font-weight: bold;
+			.is-dayservice & {
+				background: lighten($dayservice-color, 24%);
+			}
+			&:after {
+				display: block;
+				position: absolute;
+				top: .8em;
+				right: 1em;
+				width: 26px;
+				height: 26px;
+				text-align: right;
+				content: url(../img/ico_next.png);
+			}
+		}
+	}
+}
+

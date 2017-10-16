@@ -1,0 +1,79 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	/share/css/teaser.scss
+//  Date:2017-04-30(UTC+9)
+//  Note:	made by shimizu@hakarai
+// ===================================================================
+
+
+//	Reset
+// -------------------------------------------------------------------
+@import "base/reset";
+
+
+//	Variables
+// -------------------------------------------------------------------
+@import "helpers/variables";
+@import "helpers/all";
+@import "helpers/btn-link";
+
+
+
+
+//	Base
+// -------------------------------------------------------------------
+@import "base/mediaquery";
+@import "base/structure";
+
+
+//	Components
+// -------------------------------------------------------------------
+@import "components/page-head";
+@import "components/page-body";
+@import "components/breadcrumb";
+@import "components/gNav";
+@import "components/mainVisual";
+@import "components/google-map";
+@import "components/btn";
+@import "components/table";
+@import "components/tab";
+@import "components/block-news";
+@import "components/block-contact";
+
+
+//	Layout
+// -------------------------------------------------------------------
+@import "layout/header";
+@import "layout/footer";
+
+
+//	Projects
+// -------------------------------------------------------------------
+
+
+//	Pages
+// -------------------------------------------------------------------
+@import "pages/pages";
+@import "pages/top";
+
+
+// Themes
+// -------------------------------------------------------------------
+@import "themes/state";
+
+
+
+
+// ===================================================================
+//  File:	
+//  Date:	2015-09-20(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 大コメント
+// -------------------------------------------------------------------
+// 	中コメント
+// -------------------------------------------------
+// 	小コメント
+// -----------------
+// cssに出力するコメント

@@ -1,0 +1,93 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	layout/_header.scss
+//  Date:	2017-04-30(UTC+9)
+//  Note:	
+// ===================================================================
+// 	.skip-nav
+// -------------------------------------------------
+.skip-nav {
+	overflow: hidden;
+	height: 0;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+
+
+
+
+// -------------------------------------------------------------------
+// 	.siteTitle
+// -------------------------------------------------------------------
+.siteTitle {
+	top: 0;
+	width: 100%;
+	background: $base_bg_color;
+	z-index: 150;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		position: fixed;
+	}
+	@include element(inner) {
+		@include clearfix;
+		display: table;
+		width: 100%;
+		height: $base_padding*6;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: $site_width;
+			height: $base_padding*9;
+			margin: 0 auto;
+		}
+	}
+	.siteLogo {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 0 0 20px;
+		// ----------------------------------------
+		@include media(sp) {
+			img {
+				width: auto;
+				height: 40px;
+			}
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			padding-left: $base_padding*5;
+		}
+	}
+	@include element(shoulder) {
+		box-sizing: border-box;
+		display: table-cell;
+		padding-top: .3em;
+		padding-right: 70px;
+		text-align: right;
+		vertical-align: middle;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			padding-right: $base_padding*2.5;
+		}
+		@include element(img) {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		@include element(body) {
+			display: inline-block;
+			margin-right: $base_padding;
+			vertical-align: middle;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				display: none;
+			}
+		}
+		@include element(title) {
+			@include fontsize(16);
+		}
+	}
+}

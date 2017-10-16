@@ -1,0 +1,453 @@
+// ===================================================================
+//  File:	pages/_page-service.scss
+//  Date:	2017-04-30(UTC+9)
+//  Note:	
+// ===================================================================
+// 	サービス
+// 	「輪（りん）」「めぐり」「こころ」「プエンテ」
+// -------------------------------------------------
+.page-service {
+	a:link { text-decoration: underline; }
+	a:visited { text-decoration: underline; }
+	a:hover { text-decoration: none; }
+	p + p {
+		margin-top: 1em;
+	}
+	color: $base_text2_color;
+	@include element(unit) {
+		@include clearfix;
+		@include element(aside) {
+			margin-bottom: 1.6em;
+			> img {
+				width: 100%;
+				height: auto;
+				box-sizing: border-box;
+				max-width: 100%;
+				height: auto;
+				border-radius: 8px;
+				border: 1px solid $base_border_color;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: 545px;
+				margin-right: $base_padding*5;
+				float: left;
+				> img {
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+		@include element(body) {
+			overflow: hidden;
+		}
+		@include element(note) {
+			clear: both;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				margin-top: 1em;
+			}
+		}
+	}
+	.service-feature {
+		@include element(item) {
+			box-sizing: border-box;
+			position: relative;
+			min-height: 51px;
+			margin-top: 2em;
+			padding-left: 80px;
+			color: $base_text2_color;
+			&:before {
+				position: absolute;
+				display: block;
+				left: 0;
+				top: 0;
+			}
+			&.is-medical:before {
+				content: url(../img/ico_medical.png);
+				width: 51px;
+				height: 51px;
+			}
+			&.is-bed:before {
+				content: url(../img/ico_bed.png);
+				width: 51px;
+				height: 43px;
+			}
+			&.is-pet:before {
+				content: url(../img/ico_pet.png);
+				width: 51px;
+				height: 45px;
+			}
+			&.is-community:before {
+				content: url(../img/ico_community.png);
+				width: 51px;
+				height: 45px;
+			}
+			&.is-nurses:before {
+				content: url(../img/ico_nurses.png);
+				width: 55px;
+				height: 36px;
+			}
+			&.is-conversation:before {
+				content: url(../img/ico_conversation.png);
+				width: 51px;
+				height: 51px;
+			}
+			&.is-heart:before {
+				content: url(../img/ico_heart.png);
+				width: 49px;
+				height: 41px;
+			}
+			&.is-recreation:before {
+				content: url(../img/ico_recreation.png);
+				width: 47px;
+				height: 51px;
+			}
+			&.is-hospital:before {
+				content: url(../img/ico_hospital.png);
+				width: 50px;
+				height: 50px;
+			}
+			&.is-training:before {
+				content: url(../img/ico_training.png);
+				width: 54px;
+				height: 53px;
+			}
+			&.is-nurse:before {
+				content: url(../img/ico_nurse.png);
+				width: 39px;
+				height: 53px;
+			}
+			&.is-stretcher:before {
+				content: url(../img/ico_stretcher.png);
+				width: 58px;
+				height: 40px;
+			}
+			&.is-support:before {
+				content: url(../img/ico_support.png);
+				width: 51px;
+				height: 53px;
+			}
+		}
+	}
+	$color: #e35266;
+	.btn-detail {
+		text-align: center;
+		background-image: linear-gradient(
+			-45deg,
+			$color 25%,
+			darken($color, 8%) 25%, darken($color, 8%) 50%,
+			$color 50%, $color 75%,
+			darken($color, 8%) 75%, darken($color, 8%)
+		);
+		background-size: 4px 4px;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+		&:hover {
+			opacity: .8;
+		}
+		&:link,&:visited {
+			text-decoration: none;
+		}
+	}
+	&.service-dayservice {
+		background: url(#{$image_path}bg_block-even.gif) 0 0 no-repeat;
+		background-size: cover;
+		&.page-block--tab-body {
+			background-image: none;
+			background: $base_white_color;
+		}
+		.page-block__title {
+			color: #ff9731;
+		}
+		.page-block__unit {
+			//	[media queries PC-Tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include clearfix;
+			}
+			.page-block__unit__item {
+				&:nth-child(n+2) {
+					margin-top: $base_padding*6;
+				}
+				//	[media queries PC-Tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 270px;
+					float: left;
+					&:nth-child(n+2) {
+						margin: 0 0 0 20px;
+					}
+				}
+				.page-block__body {
+					width: 100%;
+				}
+			}
+			.page-block__unit__image + p {
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					text-align: center;
+				}
+			}
+			img {
+				box-sizing: border-box;
+				width: 100%;
+				height: auto;
+				border-radius: 8px;
+				border: 1px solid $base_border_color;
+				//	[media queries PC-Tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					max-width: 100%;
+				}
+			}
+			.btn-area {
+			}
+			$dayservice-color: #f89330;
+			.btn-detail {
+				background-image: linear-gradient(
+					-45deg,
+					$dayservice-color 25%,
+					darken($dayservice-color, 8%) 25%, darken($dayservice-color, 8%) 50%,
+					$dayservice-color 50%, $dayservice-color 75%,
+					darken($dayservice-color, 8%) 75%, darken($dayservice-color, 8%)
+				);
+				text-decoration: none;
+				//	[media queries PC-Tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	// 	「輪（りん）」「めぐり」「こころ」「プエンテ」
+	// -------------------------------------------------
+	@include element(title) {
+		margin-bottom: 1.5em;
+		@include fontsize(24);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include fontsize(18);
+			text-align: center;
+		}
+		.page-rin & {
+			color: $base_rin_color;
+		}
+		.page-dayservice & {
+			color: $base_dayservice_color;
+		}
+	}
+	.service-menu {
+		margin-bottom: 1.5em;
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			width: 100%;
+		}
+		@include element(item) {
+			display: inline-block;
+			&:nth-child(n+2) {
+				margin-left: 1em;
+			}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				width: 18%;
+				&:nth-child(n+2) {
+					margin-left: 1%;
+				}
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+	.service-info {
+		position: relative;
+		margin-top: 1.4em;
+		padding-left: 36px;
+		&:before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 29px;
+		}
+		&.info--map {
+			&:before {
+				content: url(../img/ico_map.png);
+				width: 29px;
+			}
+		}
+		&.info--access {
+			&:before {
+				content: url(../img/ico_access.png);
+				width: 21px;
+			}
+		}
+	}
+	.page-block__body {
+		//	[media queries PC-Tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: $base_content_width;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+	&.page-block--tab-control {
+		padding-top: 0;
+	}
+	&.page-block--tab-body {
+		padding-bottom: 0;
+		.tab-body {
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				display: block!important;
+			}
+		}
+		.tab-body__title {
+			position: relative;
+			box-sizing: border-box;
+			padding: 1em .8em;
+			background-image: linear-gradient(
+				#e95569 0%,#ff91a1 100%
+			);
+			@include fontsize(20);
+			font-family: $base_font_family_mincho;
+			font-weight: bold;
+			line-height: 1;
+			color: $base_white_color;
+			@include transition(all linear .5s);
+			cursor: pointer;
+			&:after {
+				position: absolute;
+				display: block;
+				width: 26px;
+				height: 26px;
+				top: .8em;
+				right: 12px;
+				content: url(../img/ico_next.png);
+				transform: rotate(90deg);
+			}
+			&.is-active:after {
+				transform: rotate(-90deg);
+			}	//	[media queries PC-Tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: none;
+			}
+		}
+	}
+	.block-price + .block-price {
+		padding-top: 0;
+	}
+	.block-map {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		height: 0;
+		overflow: hidden;
+	}
+	.block-map iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.photo-slide {
+	.item {
+		img {
+			width: 100%;
+			height: auto;
+			box-sizing: border-box;
+			max-width: 100%;
+			height: auto;
+			border-radius: 4px;
+			border: 1px solid $base_border_color;
+		}
+	}
+	.thumb-item-nav {
+		margin-top: 1.5em;
+		.slick-slide {
+			box-sizing: border-box;
+			width: 18%!important;
+			margin-right: 2.5%;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.block-service-info {
+	background: url(#{$image_path}bg_block-even.gif) 0 0 no-repeat;
+	background-size: cover;
+	text-align: center;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		@include fontsize(18);
+	}
+	@include element(lead) {
+		margin-bottom: 1.5em;
+		@include fontsize(24);
+		//	[media queries SP]
+		// ----------------------------------------
+		@include media(sp) {
+			@include fontsize(18);
+			text-align: center;
+		}
+	}
+	@include element(body) {
+		display: table;
+		box-sizing: border-box;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 1em 4em;
+		background: #fbdde1;
+		border-radius: 6px;
+		text-align: center;
+		.title {
+			margin-bottom: .4em;
+		}
+		.service-dayservice & {
+			background: #fbe2c8;
+			a {
+				color: #f2902c;
+				&:before {
+					width: 36px;
+					height: 30px;
+					content: url(../img/ico_block-contact-dayservice.png);
+				}
+			}
+		}
+		.title {
+			@include fontsize(24);
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				@include fontsize(18);
+				text-align: center;
+			}
+		}
+		.page-block__body + &,
+		.page-dayservice__price + & {
+			margin-top: 4em;
+		}
+	}
+}
+

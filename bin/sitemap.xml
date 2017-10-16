@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<url>
+  <loc>http://www.bkh.jp/koshigaya/</loc>
+  <priority>1.0</priority>
+  <lastmod>2017-03-05T09:14:36+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/index.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2017-03-05T09:14:36+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/policy/</loc>
+  <priority>0.8</priority>
+  <lastmod>2017-03-05T09:03:33+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/course/</loc>
+  <priority>0.8</priority>
+  <lastmod>2017-03-05T09:03:33+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/access/</loc>
+  <priority>0.8</priority>
+  <lastmod>2017-03-05T09:03:32+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/faq/</loc>
+  <priority>0.8</priority>
+  <lastmod>2017-03-05T09:03:33+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/info/</loc>
+  <priority>0.8</priority>
+  <lastmod>2017-03-05T09:03:33+09:00</lastmod>
+</url>
+<url>
+  <loc>http://www.bkh.jp/koshigaya/access/02.5%22N+139%C2%B047</loc>
+  <priority>0.7</priority>
+</url>
+
+</urlset>

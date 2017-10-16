@@ -1,0 +1,198 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	layout/_header.scss
+//  Date:	2017-04-10(UTC+9)
+//  Note:	
+// ===================================================================
+// 	ハンバーガーメニュー
+// ----------------------------------------
+.gNav {
+	position: relative;
+	.siteLogo {
+		margin-bottom: 2em;
+		text-align: center;
+	}
+	// 	MENUボタン
+	// ----------------------------------------
+	@include element(title) {
+		box-sizing: border-box;
+		display: block;
+		position: fixed;
+		overflow: hidden;
+		right: 0;
+		top: 66px;
+		width: 60px;
+		height: 60px;
+		padding: 12px 8px;
+		background: rgba($base_menu_color, .8);
+		border-radius: $base_radius;
+		cursor: pointer;
+		z-index: 1100;
+		@include transition(all linear .5s);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			top: 125px;
+			right: 25px;
+			&:hover {
+				background: $base_menu_color;
+			}
+		}
+		&:after {
+			position: absolute;
+			display: block;
+			width: 100%;
+			@include alignC;
+			bottom: 1px;
+			left: 0;
+			color: $base_white_color;
+			@include fontsize(10);
+			text-transform: uppercase;
+			content: 'menu';
+			text-align: center;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(12);
+			}
+		}
+		> span {
+			position: relative;
+			display: block;
+			&:before,  &:after, > span:before, > span:after {
+				position: absolute;
+				content: '';
+				display: block;
+				width: 44px;
+				height: 3px;
+				background: $base_white_color;
+				@include transition(all linear .5s);
+			}
+			&:before {
+				top: 0;
+			}
+			&:after {
+				bottom: 11px;
+			}
+			> span {
+				display: block;
+				width: 24px;
+				height: 36px;
+				text-indent: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			> span:before, > span:after {
+				top: 11px;
+			}
+		}
+		//	[MENU open]
+		.is-open & {
+			background: $base_white_color;
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp){
+				position: fixed;
+				@include opacity(1);
+			}
+			&:after {
+				content: 'close';
+				color: $base_menu_color;
+			}
+			> span {
+				&:before,  &:after, > span:before, > span:after {
+					background: $base_text_color;
+				}
+				&:before, &:after {
+					-webkit-transform: translateX(200%);
+					transform: translateX(200%);
+				}
+			}
+			> span > span {
+				&:before {
+					-webkit-transform: rotate(315deg);
+					transform: rotate(315deg);
+				}
+				&:after {
+					-webkit-transform: rotate(-315deg);
+					transform: rotate(-315deg);
+				}
+			}
+		}
+	}
+	// 	MENU本体
+	// ----------------------------------------
+	@include element(body) {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		overflow: auto;
+		background: $base_menu_overlay;
+		z-index: 1000;
+	}
+	@include element(contents) {
+		.is-open & {
+			box-sizing: border-box;
+			width: 100%;
+			padding: $base_padding*8 $base_padding*2 0;
+			color: $base_white_color;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: $site_width;
+				margin: 0 auto;
+			}
+		
+		}
+		@include element(title) {
+			display: none;
+		}
+		@include element(body) {
+			ul {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					display: table;
+					margin: 0 auto;
+					border-left: 1px solid $base_border_color;
+					.is-open & {
+						border-left: none;
+					}
+				}
+			}
+		}
+	}
+	@include element(item) {
+		display: table-cell;
+		border-right: 1px solid $base_border_color;
+		text-transform: uppercase;
+		vertical-align: top;
+		.is-open & {
+			display: block;
+			border: none;
+			> a, >span {
+				box-sizing: border-box;
+				display: block;
+				padding: .8em 1.6em;
+				color: $base_white_color;
+				text-align: center;
+
+				@include transition(all linear .5s);
+				@include fontsize(16);
+			}
+			>span {
+				color: lighten($base_text_color, 60%);
+			}
+			& + .gNav__item {
+				margin-top: $base_padding*2;
+			}
+		}
+	}
+}
+
+
+

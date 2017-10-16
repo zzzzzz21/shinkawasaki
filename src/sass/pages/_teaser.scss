@@ -1,0 +1,265 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_top.scss
+//  Date:	2017-04-10(UTC+9)
+//  Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// 	.teaser
+// -------------------------------------------------------------------
+.teaser {
+	.block {
+		border-top-width: 10px;
+		border-top-style: solid;
+		line-height: 1.8;
+		@include fontsize(16);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			text-align: center;
+		}
+		@include element(title) {
+			margin-bottom: 4em;
+			text-align: center;
+			.title-sub, title-main {
+				display: block;
+			}
+			.title-sub {
+				margin-bottom: 1.5em;
+				@include fontsize(16);
+				font-weight: normal;
+			}
+			.title-main {
+				@include fontsize(24);
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					@include fontsize(36);
+				}
+			}
+		}
+		@include modifier(image) {
+			background: $base_image_bg_color;
+			padding: $base_padding*4 0;
+			text-align: center;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				padding: $base_padding*8 0;
+			}
+			img {
+				display: block;
+				width: 120px;
+				height: auto;
+				margin: 0 auto;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: auto;
+					height: auto;
+				}
+			}
+			& + .container {
+				margin-top: $base_padding*6;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: $base_padding*8;
+				}
+			}
+		}
+		@include modifier(photo) {
+			img {
+				width: 100%;
+				height: auto;
+			}
+			* + &, & + .container {
+				margin-top: $base_padding*6;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: $base_padding*8;
+				}
+			}
+		}
+		@include modifier(map) {
+			* + &, & + .container {
+				margin-top: $base_padding*6;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: $base_padding*8;
+				}
+			}
+		}
+		@include modifier(others) {
+			border-top: none;
+			.divider {
+				margin-bottom: $base_padding*3;
+				padding: $base_padding*6 0;
+				background: #f8f7f5;
+				text-align: center;
+				@include fontsize(36);
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-bottom: $base_padding*10;
+					padding: $base_padding*8 0;
+				}
+				span {
+					position: relative;
+					display: inline-block;
+					padding-bottom: 30px;
+					&:after {
+						position: absolute;
+						bottom: 0;
+						left: 46%;
+						width: 24px;
+						height: 24px;
+						border-right: 2px solid $base_border_color;
+						border-top: 2px solid $base_border_color;
+						content: '';
+						transform: rotate(135deg);
+					}
+				}
+			}
+		}
+		@include modifier(company) {
+			text-align: left;
+			.container {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: 810px;
+				}
+				* + .fact-table {
+					margin-top:  $base_padding*6;
+				}
+			}
+		}
+		@include modifier(broucher) {
+			* + &, & + .container {
+				margin-top: $base_padding*6;
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					margin-top: $base_padding*8;
+				}
+			}
+		}
+	}
+	.unit {
+		.title {
+			margin-bottom: .8em;
+			@include fontsize(20);
+			font-weight: bold;
+		}
+		@include modifier(point) {
+			@extend .unit;
+			box-sizing: border-box;
+			padding: 2em;
+			border-radius: 12px;
+		}
+		@include modifier(access) {
+			@extend .unit;
+			.title {
+				@include fontsize(18);
+				text-transform: uppercase;
+			}
+			* + .title {
+				margin-top: $base_padding*4;
+			}
+		}
+		@include modifier(information) {
+			@extend .unit;
+		}
+		@include modifier(contact) {
+			@extend .unit;
+			text-align: center;
+			.title {
+				display: inline-block;
+				padding: .6em 4em;
+				border-radius: $base_radius*2;
+				color: $base_white_color;
+				* + & {
+					margin-top: 1.5em;
+				}
+			}
+		}
+	}
+	.contact--number {
+		@include fontsize(32);
+		font-weight: bold;
+		a {
+			color: $base_text_color;
+			&:before {
+				display:inline-block;
+				vertical-align: middle;
+				margin-right: .2em;
+			}
+		}
+	}
+	.contact--fax {
+		@include fontsize(20);
+		font-weight: bold;
+	}
+}
+
+// 	coloring
+// -------------------------------------------------
+.block-rin {
+	border-top-color: $base_rin_color;
+	.contact--number a:before {
+		content: url(../img/img_tel_rin.png);
+	}
+	.unit--point {
+		background: #f2e6d3;
+	}
+	.unit--contact .title {
+		background: #b28850;
+	}
+	.btn-target {
+		box-sizing: border-box;
+		display: inline-block;
+		width: auto;;
+		padding-right: 6em;
+		padding-left: 6em;
+		background: $base_rin_color;
+		color: $base_white_color;
+		&:hover {
+			background: $base_white_color;
+			border: 1px solid $base_border_color;
+			color: $base_rin_color;
+		}
+	}
+}
+.block-meguri {
+	border-top-color: $base_meguri_color;
+	.contact--number a:before {
+		content: url(../img/img_tel_meguri.png);
+	}
+	.unit--point {
+		background: #d3edbf;
+	}
+	.unit--contact .title {
+		background: #90bba0;
+	}
+}
+.block-kokoro {
+	border-top-color: $base_kokoro_color;
+	.contact--number a:before {
+		content: url(../img/img_tel_kokoro.png);
+	}
+	.unit--contact .title {
+		background: #cc92b7;
+	}
+}
+.block-puente {
+	border-top-color: $base_puente_color;
+	.contact--number a:before {
+		content: url(../img/img_tel_puente.png);
+	}
+	.unit--contact .title {
+		background: #b28850;
+	}
+}

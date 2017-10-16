@@ -1,0 +1,104 @@
+@charset "UTF-8";
+// ===================================================================
+//	File:	helpers/_variable.scss
+//	Date:	2017-04-10(+09:00)
+//	Note:	
+// ===================================================================
+// -------------------------------------------------------------------
+// Web Font
+// -------------------------------------------------------------------
+$webfont_en: 'Open Sans', sans-serif;
+$webfont_hannari: 'Open Sans', sans-serif;
+
+
+// -------------------------------------------------------------------
+// Color
+// -------------------------------------------------------------------
+// -------------------------------------------------
+//		Color palette
+// -------------------------------------------------
+$base_corporate_color:	#f39;
+$base_white_color:		#fff;
+
+
+// -------------------------------------------------
+//		Base
+// -------------------------------------------------
+$base_text_color:		#333;
+$base_bg_color:		#fff;// for BG
+$base_border_color:	#ccc;// for BORDER
+$base_footer_color:	#f882bf;
+$base_image_bg_color:	#f8f7f5;
+$base_title_color:	#f99;
+
+$base_rin_color:		#f60;
+$base_meguri_color:	#78c31e;
+$base_kokoro_color:	#ff9699;
+$base_puente_color:	#f7db7a;
+
+// -------------------------------------------------
+//		Link
+// -------------------------------------------------
+$base_link_color:			#03f;
+$base_visited_color:		$base_link_color;
+$base_hover_color:		lighten($base_link_color,5%); // ↑のhover
+$base_active_color:		$base_link_color;
+$base_btn_color:			rgba(33,33,67,1);
+$base_btn_color_hover:	lighten($base_btn_color,5%); // ↑のhover
+$base_menu_color:		#000;
+$base_menu_overlay:		rgba($base_corporate_color,.9);
+
+
+// -------------------------------------------------------------------
+// Base Overlay Depth
+// -------------------------------------------------------------------
+$base_depth:	1000;
+$base_radius:	4px;
+
+
+// -------------------------------------------------------------------
+// Image Path
+// -------------------------------------------------------------------
+$image_path:	"../img/";
+
+
+// -------------------------------------------------------------------
+// Size
+// -------------------------------------------------------------------
+$site_width:		1080px;
+$design_width:	1024;
+$design_height:	768;
+
+
+// -------------------------------------------------------------------
+// Font Setting
+// -------------------------------------------------------------------
+$base_font_size:		14;
+$base_font_family:	"Open Sans", Meiryo,"Hiragino Kaku Gothic ProN", sans-serif;
+$base_font_family_mincho:	"Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
+$base_line_height:	1.6;
+$sp_base_font_size:	16;
+$sp_base_line_height:	1.8;
+
+
+// -------------------------------------------------------------------
+// Padding
+// -------------------------------------------------------------------
+$base_padding: 10px;
+
+
+// -------------------------------------------------------------------
+// Break Point
+// -------------------------------------------------------------------
+$break_point_pc_max:			2560px;
+$break_point_pc_min:			1080px;
+$break_point_tablet_max:		1079px;
+$break_point_tablet_min:		768px;
+$break_point_mobile_max:	767px;
+$break_point_mobile_min:	320px;
+
+
+// -------------------------------------------------------------------
+// Animation by monsterdive inc.
+// -------------------------------------------------------------------
+$IS_BASE_ANIMATION: true;

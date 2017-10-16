@@ -1,0 +1,122 @@
+@charset "UTF-8";
+// ===================================================================
+//	File:	base/_structure.scss
+//	Date:	2015-05-02(+09:00)
+//	Note:	
+// ===================================================================
+html {
+	font-size: 62.5%;	// fontsize 指定は1rem=1px
+	height: 100%;
+	background: $base_bg_color;
+}
+
+body {
+	@include fontsize($base_font_size);
+	background: $base_bg_color;
+	color: $base_text_color;
+	font-family: $base_font_family;
+	line-height: $base_line_height;
+}
+html, body {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	position: relative;
+	min-height: 100%;
+	// ----------------------------------------
+	//	[media queries SP]
+	// ----------------------------------------
+	//	[media queries sp]
+	@include media(sp) {
+		&.is-open {
+			position: fixed;
+		}
+	}
+}
+
+.page {
+	min-height: 100%;
+	position: relative;
+	box-sizing: border-box;
+	// ----------------------------------------
+	//	[media queries SP]
+	// ----------------------------------------
+	//	[media queries sp]
+	@include media(sp) {
+		body:not(.teaser) & {
+			padding-top: $base_padding*6;
+		}
+	}
+	// ----------------------------------------
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		.teaser & {
+			padding-top: $base_padding*10;
+		}
+	}
+}
+.contents {
+	//padding-bottom: $base_padding*12;
+}
+.block {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
+	padding: $base_padding*4 0;
+	background: $base_white_color;
+	&:last-child {
+		padding-bottom: 0;
+	}
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		padding: $base_padding*12 0;
+	}
+	p + p {
+		margin-top: 1em;
+	}
+}
+.unit + .unit {
+	margin-top: $base_padding*4;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		margin-top: $base_padding*6;
+	}
+}
+.container {
+	box-sizing: border-box;
+	margin: 0 auto;
+	@include clearfix;
+	@include media(pc) {
+		width: $site_width;
+	}
+	@include media(tb) {
+		width: 100%;
+		padding: 0 $base_padding;
+	}
+	@include media(sp) {
+		width: 100%;
+		padding: 0 $base_padding;
+	}
+}
+.data-link-sp {
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		cursor: default;
+	}
+}
+
+.alignR {
+	@include alignR;
+}
+button {
+	cursor: pointer;
+	/* when tapping or clicking the button */
+	outline: none;
+	border: none;
+}

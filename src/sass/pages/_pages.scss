@@ -1,0 +1,184 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_pages.scss
+//  Date:	2017-04-30(UTC+9)
+//  Note:	
+// ===================================================================
+.block {
+	line-height: 1.8;
+	@include fontsize(16);
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		text-align: center;
+	}
+	@include element(title) {
+		margin-bottom: 1.2em;
+		padding-bottom: .6em;
+		text-align: center;
+		font-family: $base_font_family_mincho;
+		@include fontsize(24);
+		letter-spacing: .16em;
+		color: $base_title_color;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@include fontsize(36);
+		}
+	}
+}
+
+
+// -------------------------------------------------------------------
+// .page-block
+// -------------------------------------------------------------------
+.page-block {
+	line-height: 1.8;
+	@include fontsize(16);
+	padding: $base_padding*6 0;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		padding: $base_padding*10 0;
+	}
+	&:nth-child(2n+1) {
+		background: $base_white_color;
+	}
+	@include element(title) {
+		margin-bottom: 2em;
+		@include alignC;
+		font-family: $base_font_family_mincho;
+		@include fontsize(20);
+		letter-spacing: .16em;
+		color: $base_title_color;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			@include fontsize(32);
+		}
+		span:not(.page-block__title--main) {
+			position: relative;
+			display: inline-block;
+			&:before {
+				position: absolute;
+				top: -1em;
+				left: -1em;
+				content: url(../img/bg_page-block_title.png);
+				width: 65px;
+				height: 51px;
+			}
+		}
+		@include modifier(sub) {
+			display: block;
+			@include fontsize(14);
+			font-weight: normal;
+			line-height: 1;
+			&:before {
+				content: none;
+			}
+		}
+		@include modifier(main) {
+			display: block;
+			line-height: 1;
+		}
+	}
+	@include element(lead) {
+		margin-bottom: 2em;
+		text-align: center;
+	}
+	@include element(body) {
+		p + p,
+		* + p,
+		p + * {
+			margin-top: 1em;
+		}
+	}
+	@include element(unit) {
+		& + & {
+			margin-top: $base_padding*16;
+		}
+		@include element(title) {
+			margin-bottom: 2em;
+			@include alignC;
+			color: $base_text2_color;
+			@include fontsize(18);
+			.sub,.main {
+				display: block;
+			}
+			.sub {
+				@include fontsize(16);
+				font-weight: normal;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(24);
+			}
+		}
+	}
+	@include element(gallery) {
+		margin-top: 2em;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: table;
+			width: 100%;
+			@include clearfix;
+		}
+		@include element(item) {
+			display: block;
+			max-width:100%;
+			height: auto;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				float: left;
+				width: 33.3333%;
+			}
+		}
+	}
+	// 	会社案内
+	// -------------------------------------------------
+	&.page-company {
+		.container {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: 810px;
+				@include fontsize(18);
+			}
+		}
+	}
+	// 	採用情報
+	// -------------------------------------------------
+	&.page-recruit {
+		.container {
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				width: 810px;
+			}
+		}
+	}
+}
+
+
+// -------------------------------------------------------------------
+// 	サービス
+// 	「輪（りん）」「めぐり」「こころ」「プエンテ」
+// -------------------------------------------------------------------
+@import "page-service";
+
+
+// -------------------------------------------------------------------
+// .page-tab
+// -------------------------------------------------------------------
+.page-block.page-block--tab-control {
+	padding-bottom: 0;
+	background: transparent!important;
+}
+.page-block--tab-body {
+	padding-top: 0;
+	background-color: $base_white_color;
+	background-image: none!important;
+}
