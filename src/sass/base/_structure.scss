@@ -25,6 +25,7 @@ body {
 	width: 100%;
 	position: relative;
 	min-height: 100%;
+	@include smooth;
 	// ----------------------------------------
 	//	[media queries SP]
 	// ----------------------------------------
@@ -40,23 +41,6 @@ body {
 	min-height: 100%;
 	position: relative;
 	box-sizing: border-box;
-	// ----------------------------------------
-	//	[media queries SP]
-	// ----------------------------------------
-	//	[media queries sp]
-	@include media(sp) {
-		body:not(.teaser) & {
-			padding-top: $base_padding*6;
-		}
-	}
-	// ----------------------------------------
-	//	[media queries PC-tablet]
-	// ----------------------------------------
-	@include media(pc-tb) {
-		.teaser & {
-			padding-top: $base_padding*10;
-		}
-	}
 }
 .contents {
 	//padding-bottom: $base_padding*12;
@@ -65,15 +49,12 @@ body {
 	box-sizing: border-box;
 	position: relative;
 	z-index: 10;
-	padding: $base_padding*4 0;
+	padding: $base_padding*4 0 $base_padding*6;
 	background: $base_white_color;
-	&:last-child {
-		padding-bottom: 0;
-	}
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
-		padding: $base_padding*12 0;
+		padding: $base_padding*6 0 $base_padding*8;
 	}
 	p + p {
 		margin-top: 1em;
@@ -89,18 +70,32 @@ body {
 }
 .container {
 	box-sizing: border-box;
+	width: 100%;
 	margin: 0 auto;
+	padding: 0 $base_padding;
 	@include clearfix;
-	@include media(pc) {
-		width: $site_width;
+	//	[media queries tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		max-width: $site_width;
 	}
+	//	[media queries tablet]
+	// ----------------------------------------
 	@include media(tb) {
-		width: 100%;
-		padding: 0 $base_padding;
 	}
+	//	[media queries SP]
+	// ----------------------------------------
 	@include media(sp) {
+	}
+	@include element(inner) {
 		width: 100%;
-		padding: 0 $base_padding;
+		margin: 0 auto;
+		//	[media queries tablet]
+		// ----------------------------------------
+		@include media(pc) {
+			@include clearfix;
+			max-width: $base_content_width;
+		}
 	}
 }
 .data-link-sp {
@@ -119,4 +114,14 @@ button {
 	/* when tapping or clicking the button */
 	outline: none;
 	border: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+	}
 }

@@ -119,3 +119,19 @@ a {
 	overflow: hidden;
 	white-space: nowrap;
 }
+
+
+// -------------------------------------------------
+// 	table
+// -------------------------------------------------
+@mixin base_table {
+	width: 100%;
+	th, td {
+		padding: .6em .4em;
+		vertical-align: top;
+	}
+	th {
+		font-weight: normal;
+		text-align: left;
+	}
+}

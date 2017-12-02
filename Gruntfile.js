@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 			lib:'lib',
 			js: 'js',
 			css: 'css',
-			img:'img',
+			img:'images',
 			sass:'sass'
 		},
 		// bowerでパッケージをインストール
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				files: {
-					'<%= dir.bin %>/<%= dir.share %>/<%= dir.css %>/style.css': ['bin/<%= dir.share %>/<%= dir.css  %>/style.css']
+					'<%= dir.bin %>/shinkawasaki/<%= dir.share %>/<%= dir.css %>/style.css': ['bin/shinkawasaki/<%= dir.share %>/<%= dir.css  %>/style.css']
 				}
 			}
 		},
@@ -217,9 +217,9 @@ module.exports = function(grunt) {
 			},
 			dev:{
 				expand: true,
-				cwd: '<%= dir.bin %>/<%= dir.share %>/<%= dir.css %>/',
+				cwd: '<%= dir.bin %>/**/<%= dir.share %>/<%= dir.css %>/',
 				src: ['*.css'],
-				dest: '<%= dir.bin %>/<%= dir.share %>/<%= dir.css %>/'
+				dest: '<%= dir.bin %>/**/<%= dir.share %>/<%= dir.css %>/'
 			}
 		}
 	});

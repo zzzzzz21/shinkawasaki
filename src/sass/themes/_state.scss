@@ -1,7 +1,7 @@
 @charset "UTF-8";
 // ===================================================================
 //	File:	themes/_state.scss
-//	Date:	2017-04-10(+09:00)
+//	Date:	2017-10-18(+09:00)
 //	Note:	
 // ===================================================================
 // JS
@@ -63,3 +63,32 @@
 }
 
 
+// modifier
+// -------------------------------------------------------------------
+.is--notice {
+	@include fontsize(12);
+	color: $base_notice_color;
+}
+
+.notice-text {
+	@include fontsize(13);
+}
+.is--tel {
+	position: relative;
+	display: inline-block;
+	font-family: $base_font_family_noto;
+	@include fontsize(24);
+	color: $base_text_color;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		@include fontsize(48);
+	}
+	&:before {
+		position: relative;
+		display: inline-block;
+		padding-right: .4em;
+		content: url(#{$image_path}icon_tel.png);
+		vertical-align: middle;
+	}
+}

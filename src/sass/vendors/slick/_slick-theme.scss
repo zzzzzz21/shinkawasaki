@@ -11,12 +11,12 @@
 $slick-font-family: "slick" !default;
 //$slick-loader-path: "/img" !default;
 $slick-arrow-color: white !default;
-$slick-dot-color: black !default;
-$slick-dot-color-active: $slick-dot-color !default;
+$slick-dot-color: $base_border_color !default;
+$slick-dot-color-active: $base_corporate_color !default;
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
-$slick-dot-character: "\2022" !default;
-$slick-dot-size: 6px !default;
+$slick-dot-character: "●" !default;
+$slick-dot-size: 16px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
@@ -43,7 +43,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-list {
     .slick-loading & {
-        background: #fff l("/share/lib/slck/ajax-loader.gif") center center no-repeat;
+        background: #fff l("../lib/slck/ajax-loader.gif") center center no-repeat;
     }
 }
 
@@ -51,8 +51,8 @@ $slick-opacity-not-active: 0.25 !default;
 @if $slick-font-family == "slick" {
     @font-face {
         font-family: "slick";
-        src: url("/share/lib/slick/fonts/slick.eot");
-        src: url("/share/lib/slick/fonts/slick.eot?#iefix") format("embedded-opentype"), url("/share/lib/slick/fonts/slick.woff") format("woff"), url("/share/lib/slick/fonts/slick.ttf") format("truetype"), url("/share/lib/slick/fonts/slick.svg#slick") format("svg");
+        src: url("../lib/slick/fonts/slick.eot");
+        src: url("../lib/slick/fonts/slick.eot?#iefix") format("embedded-opentype"), url("../lib/slick/fonts/slick.woff") format("woff"), url("../lib/slick/fonts/slick.ttf") format("truetype"), url("../lib/slick/fonts/slick.svg#slick") format("svg");
         font-weight: normal;
         font-style: normal;
     }
@@ -131,19 +131,25 @@ $slick-opacity-not-active: 0.25 !default;
 /* Dots */
 
 .slick-dotted.slick-slider {
-    margin-bottom: 30px;
+    //margin-bottom: 30px;
 }
 
 .slick-dots {
     position: absolute;
-    //bottom: -25px;
-    bottom: 10px;
+	bottom: -16px;
     list-style: none;
     display: block;
     text-align: center;
     padding: 0;
     margin: 0;
     width: 100%;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		background: $bg_block_concept;
+		bottom: 0;
+	}
+
     li {
         position: relative;
         display: inline-block;
@@ -182,7 +188,7 @@ $slick-opacity-not-active: 0.25 !default;
                 line-height: 20px;
                 text-align: center;
                 color: $slick-dot-color;
-                opacity: $slick-opacity-not-active;
+//                opacity: $slick-opacity-not-active;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
             }

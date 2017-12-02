@@ -10,17 +10,16 @@
 .globalFooter {
 	@include centering;
 	position: relative;
-	padding: $base_padding*4 0;
-	background: $base_footer_color;
 	z-index: 30;
 	// -------------------------------------------------
 	// 	.gotoTop
 	// -------------------------------------------------
 	.gotoTop {
-		position: absolute;
-		z-index: 150;
-		top: $base_padding*3;
+		position: fixed;
+		z-index: 10000;
+		bottom: $base_padding*3;
 		right: 20px;
+		@include opacity(.6);
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
@@ -30,8 +29,7 @@
 			@include btn-up;
 			width: $base_padding*2;
 			height: $base_padding*2;
-			background: lighten($base_footer_color,10%);
-			@include opacity(.4);
+//			@include opacity(.4);
 			&:after {
 				top: 6px;
 				border-color: $base_text_color;
@@ -43,61 +41,82 @@
 			}
 		}
 	}
-	.container {
-		position: relative;
-	}
-	@include element(nav) {
-		@include clearfix;
-		@include element(logo) {
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				float: left;
-				margin-right: $base_padding*8;
-				img {
-					width: 80px;
-					height: auto;
-				}
-			}
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				text-align: center;
-			}
-		}
-		@include element(body) {
-			overflow: hidden;
-			ul {
-				@include clearfix;
-				margin-top: $base_padding;
-			}
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				display: none;
-			}
-		}
-		@include element(item) {
-			float: left;
-			padding: 0 $base_padding*3;
-			border-right: 1px solid $base_white_color;
-			&:last-child  {
-				border: none;
-			}
-			> a {
-				color: $base_white_color;
-			}
-		}
-	}
 	// -------------------------------------------------
 	// 	.copyright
 	// -------------------------------------------------
 	.copyright {
-		margin-top: $base_padding*4;
+		padding: 1em 0;
+		background: $base_footer_color;
 		@include alignC;
-		@include fontsize(12);
 		color: $base_white_color;
-		font-family: Verdana;
+	}
+	// -------------------------------------------------
+	// 	.globalFooter--foot
+	// -------------------------------------------------
+	@include modifier(foot) {
+		padding: $base_padding*2 0;
+		@include element(notice) {
+			padding: $base_padding*2 0 $base_padding*4;
+			@include fontsize(12);
+			text-align: center;
+		}
+		@include element(navi) {
+			text-align: center;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				float: left;
+				text-align: left;
+			}
+			@include element(item) {
+				display: inline-block;
+				&:nth-child(n+2) {
+					margin-left: 1em;
+					padding-left: 1.2em;
+					border-left: 1px solid $base_text_color;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						margin-left: .6em;
+						padding-left: .6em;
+					}
+				}
+			}
+		}
+		@include element(logo) {
+			margin-top: $base_padding*2;
+			text-align: center;
+			//	[media queries PC]
+			// ----------------------------------------
+			@include media(pc) {
+				margin-top: 0;
+				float: right;
+			}
+			@include element(item) {
+				display: inline-block;
+				vertical-align: bottom;
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					width: calc(50% - 1em);
+				}
+				&:nth-child(n+2) {
+					margin-left: 1em;
+				}
+			}
+			@include modifier(thp) {
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					width: auto;
+					height: 30px;
+				}
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+				}
+			}
+		}
 	}
 }
 

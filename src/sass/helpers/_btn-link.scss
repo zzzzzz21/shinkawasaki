@@ -16,32 +16,48 @@
 	position: relative;
 	box-sizing: border-box;
 	display: inline-block;
-	padding: 1em 2.8em;
-	border: 1px solid $base_border_color;
-	border-radius: $base-radius;
-	background: $base_btn_color;
-	@include fontsize(18);
-	font-weight: bold;
+	padding: .4em 2em;
+	border: 1px solid $base_btn_color;
+	border-radius: $base-radius*16;
+	background: $base_white_color;
+	@include fontsize(16);
 	text-align: center;
 	@include transition(all linear .3s);
+	color: $base_btn_color;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		width: 100%;
+	}
 	&:after {
-		display: block;
 		position: absolute;
-		top: 1em;
-		right: 1em;
-		width: 26px;
-		height: 26px;
-		text-align: right;
-		content: url(../img/ico_next.png);
+		top: 32%;
+		right: 16px;
+		width: 10px;
+		height: 10px;
+		content: '';
+		border-top: 1px solid $base_btn_color;
+		border-right: 1px solid $base_btn_color;
+		vertical-align: middle;
+		transform: rotate(45deg);
+	}
+	&:link {
+		color: $base_btn_color;
+		text-decoration: none;
+	}
+	&:visited {
+		color: $base_btn_color;
+		text-decoration: none;
 	}
 	&:hover {
 		text-decoration: none;
-		background: $base_btn_color_hover;
+		background: $base_btn_color;
 		color: $base_white_color;
-	}
-	&:link,&:visited {
-		color: $base_white_color;
-		text-decoration: none;
+		&:after {
+			border-color: $base_white_color;
+			@include transition(all .3s linear .1s);
+			right: 12px;
+		}
 	}
 }
 
@@ -58,7 +74,6 @@
 	border: 1px solid $base_border_color;
 	border-radius: $base-radius;
 	@include fontsize(18);
-	font-weight: bold;
 	text-align: center;
 	color: $base_link_color;
 	@include transition(all linear .3s);
@@ -68,8 +83,8 @@
 		width: 12px;
 		height: 12px;
 		content: '';
-		border-top: 2px solid $base_link_color;
-		border-right: 2px solid $base_link_color;
+		border-top: 1px solid $base_link_color;
+		border-right: 1px solid $base_link_color;
 		vertical-align: middle;
 		transform: rotate(-45deg) translateY(100%);
 	}

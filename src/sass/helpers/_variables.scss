@@ -1,23 +1,16 @@
 @charset "UTF-8";
 // ===================================================================
 //	File:	helpers/_variable.scss
-//	Date:	2017-04-10(+09:00)
+//	Date:	2017-10-16(+09:00)
 //	Note:	
 // ===================================================================
-// -------------------------------------------------------------------
-// Web Font
-// -------------------------------------------------------------------
-$webfont_en: 'Open Sans', sans-serif;
-$webfont_hannari: 'Open Sans', sans-serif;
-
-
 // -------------------------------------------------------------------
 // Color
 // -------------------------------------------------------------------
 // -------------------------------------------------
 //		Color palette
 // -------------------------------------------------
-$base_corporate_color:	#f39;
+$base_corporate_color:	#00833e;
 $base_white_color:		#fff;
 
 
@@ -26,37 +19,41 @@ $base_white_color:		#fff;
 // -------------------------------------------------
 $base_text_color:		#333;
 $base_text2_color:	#4b2e0d;
+$base_notice_color:	#f00;
 $base_bg_color:		#fff;// for BG
 $base_border_color:	#ccc;// for BORDER
-$base_footer_color:	#f8a5cf;
-$base_image_bg_color:	#f8f7f5;
-$base_title_color:	#f99;
+$base_footer_color:	$base_corporate_color;
 
-// news
-$news-all-color: #f99;
-$news-news-color: #1ed5c2;
-$news-recruit-color: #ff9731;
-$news-seminar-color: #427de0;
+// -------------------------------------------------
+//		Theme
+// -------------------------------------------------
+$base_title_color:	$base_corporate_color;
 
-// block-contact
-$base_block-contact_color:	#f7cfcc;
+// block colors
+$bg_block_concept: #f5f6f0;
+$bg_block_access: #fcf8ee;
+$bg_block_contact: #f7f8fb;
 
-// rin color
-$base_rin_color:	#dd5064;
-$base_dayservice_color: #f2902c;
+$residence_color: #aad7a3;
+$shop_color: #87d37b;
+$childcare_color: #26a65b;
+$welfare_color: #108e84;
+$community_color: #67c69f;
+$map_color: #26a65b;
 
 // table width
 $base_table_width:	100%;
 
+
 // -------------------------------------------------
 //		Link
 // -------------------------------------------------
-$base_link_color:			$base_text2_color;
-$base_visited_color:		$base_link_color;
-$base_hover_color:		lighten($base_link_color,5%); // ↑のhover
+$base_link_color:		$base_text_color;
+$base_visited_color:	$base_link_color;
+$base_hover_color:		$base_corporate_color; // ↑のhover
 $base_active_color:		$base_link_color;
-$base_btn_color:			$base_corporate_color;
-$base_btn_color_hover:	lighten($base_btn_color,10%); // ↑のhover
+$base_btn_color:		$base_corporate_color;
+$base_btn_color_hover:	$base_corporate_color; // ↑のhover
 $base_menu_color:		#f882bf;
 $base_menu_overlay:		lighten($base_menu_color, 8%);
 
@@ -71,15 +68,15 @@ $base_radius:	4px;
 // -------------------------------------------------------------------
 // Image Path
 // -------------------------------------------------------------------
-$image_path:	"../img/";
+$image_path:	"../images/";
 
 
 // -------------------------------------------------------------------
 // Size
 // -------------------------------------------------------------------
-$site_width:		1140px;
+$site_width:		1000px;
 $design_width:	1024;
-$base_content_width:	950px;
+$base_content_width:	800px;
 $base_table_width: 810px;
 $design_height:	768;
 
@@ -89,7 +86,11 @@ $design_height:	768;
 // -------------------------------------------------------------------
 $base_font_size:		14;
 $base_font_family:	"Open Sans", Meiryo,"Hiragino Kaku Gothic ProN", sans-serif;
-$base_font_family_mincho:	"Sawarabi Mincho","Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
+$base_font_family_mincho:	"Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "メイリオ", Meiryo, serif;
+$base_font_family_noto:	"Noto Serif";
+$base_font_family_helvetica: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", ".HiraKakuInterface-W1";
+$base_font_family_m1: "Mplus 1p";
+
 $base_line_height:	1.6;
 $sp_base_font_size:	16;
 $sp_base_line_height:	1.8;
@@ -105,8 +106,8 @@ $base_padding: 10px;
 // Break Point
 // -------------------------------------------------------------------
 $break_point_pc_max:			2560px;
-$break_point_pc_min:			1080px;
-$break_point_tablet_max:		1079px;
+$break_point_pc_min:			$site_width;
+$break_point_tablet_max:		$site_width - 1px;
 $break_point_tablet_min:		768px;
 $break_point_mobile_max:	767px;
 $break_point_mobile_min:	320px;
