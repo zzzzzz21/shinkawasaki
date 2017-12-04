@@ -1,6 +1,6 @@
 @charset "utf-8";
 // ===================================================================
-//  File:	/share/css/slick.scss
+//  File:	/share/css/style.scss
 //  Date:2017-10-17(UTC+9)
 //  Note:	made by shimizu@hakarai
 // ===================================================================
@@ -28,10 +28,15 @@
 
 //	Components
 // -------------------------------------------------------------------
+@import "components/gNav";
+@import "components/breadcrumb";
 @import "components/btn";
 @import "components/font";
 @import "components/google-map";
+@import "components/tab";
 @import "components/table";
+@import "components/list";
+@import "components/block-contact";
 
 
 //	Layout
@@ -48,6 +53,10 @@
 // -------------------------------------------------------------------
 @import "pages/pages";
 @import "pages/top";
+@import "pages/map";
+@import "pages/concept";
+@import "pages/equipment";
+@import "pages/room";
 
 
 // Themes

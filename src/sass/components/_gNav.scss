@@ -1,38 +1,71 @@
 @charset "utf-8";
 // ===================================================================
-//  File:	layout/_header.scss
-//  Date:	2017-04-10(UTC+9)
+//  File:	components/_gNav.scss
+//  Date:	2017-12-10(UTC+9)
 //  Note:	
 // ===================================================================
-// 	ハンバーガーメニュー
-// ----------------------------------------
 .globalHeader {
-	background: lighten($base_menu_overlay,8%);
-}
-.gNav {
-	position: relative;
-	.siteLogo {
-		margin-bottom: 2em;
-		text-align: center;
-		//	[media queries PC-tablet]
+	background: rgba($base_white_color, .8);
+	body:not(.siteIndex) & {
+		border-bottom: 1px solid $base_border_color;
+	}
+	@include element(inner) {
+		box-sizing: border-box;
+		position: relative;
+		width: 100%;
+		height: 60px;
+		margin: 0 auto;
+		padding: 1em $base_padding $base_padding;
+		//	[media queries tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			display: none;
+			max-width: $site_width;
+			height: auto;
+			@include clearfix;
 		}
 	}
-	// 	MENUボタン
+	&.is--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		border-bottom: 1px solid $base_border_color;
+	}
+}
+// 	ハンバーガーメニュー
+// ----------------------------------------
+.gNavi {
+	position: relative;
+	.siteTitle__logo {
+		//	[media queries tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			float: left;
+		}
+		img {
+			width: auto;
+			height: 36px;
+			//	[media queries tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				height: auto;
+			}
+		}
+	}
+	// 	.gNavi__title
 	// ----------------------------------------
 	@include element(title) {
 		box-sizing: border-box;
 		display: block;
-		position: fixed;
+		position: absolute;
 		overflow: hidden;
-		right: 0;
-		top: 0;
+		right: -$base_padding;
+		top: -1em;
 		width: 60px;
 		height: 60px;
 		padding: 12px 8px;
-		background: $base_menu_color;
+	//	background: $base_menu_color;
 		cursor: pointer;
 		z-index: 1100;
 		@include transition(all linear .5s);
@@ -41,6 +74,10 @@
 		@include media(pc-tb) {
 			display: none;
 		}
+		.is-open & {
+			top: 0;
+			right: 0;
+		}
 		&:after {
 			position: absolute;
 			display: block;
@@ -48,7 +85,7 @@
 			@include alignC;
 			bottom: 1px;
 			left: 0;
-			color: $base_white_color;
+			color: $base_menu_color;
 			@include fontsize(10);
 			text-transform: uppercase;
 			content: 'menu';
@@ -68,7 +105,7 @@
 				display: block;
 				width: 44px;
 				height: 4px;
-				background: $base_white_color;
+				background: $base_menu_color;
 				border-radius: 6px;
 				@include transition(all linear .5s);
 			}
@@ -101,11 +138,11 @@
 			}
 			&:after {
 				content: 'close';
-				color: $base_text_color;
+				color: $base_menu_color;
 			}
 			> span {
 				&:before,  &:after, > span:before, > span:after {
-					background: $base_text_color;
+					background: $base_menu_color;
 				}
 				&:before, &:after {
 					-webkit-transform: translateX(200%);
@@ -124,9 +161,14 @@
 			}
 		}
 	}
-	// 	MENU本体
+	// 	.gNavi__body::MENU本体
 	// ----------------------------------------
 	@include element(body) {
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			float: right;
+		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
@@ -142,134 +184,147 @@
 			background: $base_menu_overlay;
 		}
 	}
+	// 	.gNavi__contents
+	// ----------------------------------------
 	@include element(contents) {
 		box-sizing: border-box;
-		width: $site_width;
-		margin: 0 auto;
-		//	[media queries SP]
+		width: 100%;
+		padding: $base_padding*8 $base_padding*2 0;
+		color: $base_text_color;
+		//	[media queries tablet]
 		// ----------------------------------------
-		@include media(sp) {
-			width: 100%;
-			padding: $base_padding*8 $base_padding*2 0;
-			color: $base_text_color;
+		@include media(pc-tb) {
+			padding: 0;
 		}
-
+		// 	.gNavi__contents__title
+		// ----------------------------------------
 		@include element(title) {
 			display: none;
 		}
+		// 	.gNavi__contents__body
+		// ----------------------------------------
 		@include element(body) {
-			display: table;
-			width: 100%;
-			margin: 0 auto;
-			border-left: 1px solid $base_white_color;
-			//	[media queries SP]
-			// ----------------------------------------
-			@include media(sp) {
-				display: block;
-				border: none;
+			ul {
+				//	[media queries SP]
+				// ----------------------------------------
+				@include media(sp) {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					align-items: center;
+				}
 			}
 		}
 	}
+	// 	.gNavi__item
+	// ----------------------------------------
 	@include element(item) {
 		position: relative;
-		display: table-cell;
-		width: 16.6666%;
-		border-right: 1px solid $base_white_color;
-		text-transform: uppercase;
-		vertical-align: bottom;
 		@include transition(all linear .5s);
 		> a, >span {
 			position: relative;
 			box-sizing: border-box;
 			display: block;
-			padding: .8em 1.6em;
+			padding: .8em;
 			color: $base_text_color;
 			text-align: center;
 			@include fontsize(16);
-		}
-		//	[media queries PC]
-		// ----------------------------------------
-		@include media(pc-tb) {
-			&.is-current{
-				background: lighten($base_menu_overlay,12%);
-				&:after {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					content: '';
-					width: 100%;
-					height: 5px;
-					background: #e84693;
-				}
+			//	[media queries SP]
+			// ----------------------------------------
+			@include media(sp) {
+				border: 1px solid $base_corporate_color;
+				border-radius: $base_radius;
+				background: $base_white_color;
 			}
-			&:hover,
-			.siteIndex &.is-home,
-			.xService &.is-service,
-			.xCompany &.is-company,
-			.xNews &.is-news,
-			.xRecruit &.is-recruit,
-			.xContact &.is-contact {
-				@extend .is-current;
-			}
-		}
-		> a:before {
-			position: relative;
-			display: block;
-			margin: 0 auto .4em;
-		}
-		>span {
-			color: lighten($base_text_color, 60%);
 		}
 		//	[media queries SP]
 		// ----------------------------------------
 		@include media(sp) {
-			display: block;
-			width: 100%;
-			border: none;
-			& + & {
-				margin-top: $base_padding*2;
+			flex: 1 0 48%;
+			margin: 20px 1% 0;
+			.xConcept &.is-concept a,
+			.xRoom &.is-room a,
+			.xEquipment &.is-equipment a,
+			.xOutline &.is-outline a,
+			.xAccess &.is-access a {
+				border-color: $base_white_color;
+				background: $base_corporate_color;
+				.en, .ja {
+					color: $base_white_color;
+				}
 			}
-			> a, > span {
-				padding-left: 20%;
-				position: relative;
-				text-align: left;
-				vertical-align: middle;
+			.en {
+				display: block;
 			}
-			> a:before {
+			.ja {
+				display: block;
+				@include fontsize(18);
+				font-weight: bold;
+				color: $base_corporate_color;
+			}
+		}
+		//	[media queries PC]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: inline-block;
+			border-right: 1px solid $base_border_color;
+			vertical-align: bottom;
+			&.is-concept {
+				border-left: 1px solid $base_border_color;
+			}
+			> a, >span {
+				padding: .6em 1.2em;
+				@include fontsize(14);
+			}
+			> a:hover, a:focus {
+				color: $base_corporate_color;
+			}
+			&:after {
 				position: absolute;
-				top: 0;
-				left: 0;
+				top: 60%;
+				left: 50%;
+				color: transparent;
+				content: '•';
+				text-shadow: 0 0 transparent;
+				@include fontsize(14);
+				font-weight: bold;
+				transition: text-shadow 0.3s, color 0.3s;
+				transform: translateX(-50%);
+				pointer-events: none;
 			}
-		}
-		&.is-home >a:before {
-			content: url(../img/ico_home.png);
-			width: 51px;
-			height: 45px;
-		}
-		&.is-service >a:before {
-			content: url(../img/ico_service.png);
-			width: 43px;
-			height: 44px;
-		}
-		&.is-company >a:before {
-			content: url(../img/ico_company.png);
-			width: 28px;
-			height: 45px;
-		}
-		&.is-news >a:before {
-			content: url(../img/ico_news.png);
-			width: 46px;
-			height: 44px;
-		}
-		&.is-recruit >a:before {
-			content: url(../img/ico_recruit.png);
-			width: 51px;
-			height: 47px;
-		}
-		&.is-contact >a:before {
-			content: url(../img/ico_contact.png);
-			width: 48px;
-			height: 38px;
+			.en {
+				display: block;
+			}
+			.ja {
+				display: none;
+			}
+			&.is-current,
+			&:hover,
+			.xConcept &.is-concept,
+			.xRoom &.is-room,
+			.xEquipment &.is-equipment,
+			.xOutline &.is-outline,
+			.xAccess &.is-access {
+				&:after {
+					color: $base_corporate_color;
+					text-shadow: 10px 0 $base_corporate_color, -10px 0 $base_corporate_color;
+				}
+			}
+			.xConcept &.is-concept,
+			.xRoom &.is-room,
+			.xEquipment &.is-equipment,
+			.xOutline &.is-outline,
+			.xAccess &.is-access {
+				.en {
+					display: none;
+				}
+				.ja {
+					display: block;
+					color: $base_corporate_color;
+					font-weight: bold;
+				}
+			}
+
 		}
 	}
 }

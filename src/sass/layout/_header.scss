@@ -18,158 +18,158 @@
 // 	.siteTitle
 // -------------------------------------------------------------------
 .siteTitle {
-	top: 0;
 	width: 100%;
-	body:not(siteIndex) & {
-		border-bottom: 1px solid $base_border_color;
-	}
-	@include element(shoulder) {
-		box-sizing: border-box;
+	background: $base_corporate_color;
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
 		padding: 1.3em 0;
-		background: $base_corporate_color;
-		font-weight: normal;
+	}
+	//	.siteTitle__inner
+	// ----------------------------------------
+	@include element(inner) {
+		box-sizing: border-box;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 $base_padding;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			padding-top: 2.14em;
-			padding-bottom: 2.14em;
+			max-width: $site_width;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
 		}
-		.container {
+	}
+	//	.siteTitle__shoulder
+	// ----------------------------------------
+	@include element(shoulder) {
+		margin: 0;
+		padding: .6em 0;
+		font-weight: normal;
+		text-align: center;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			text-align: left;
+			letter-spacing: .03em;
+			line-height: 1;
+		}
+		a:link {
+			color: $base_white_color;
+		}
+		a:hover {
+			color: $base_white_color;
+			text-decoration: none;
+		}
+		a:visited {
+			color: $base_white_color;
+		}
+	}
+	//	.siteTitle__navi
+	// ----------------------------------------
+	@include element(navi) {
+		display: none;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
 			display: block;
-			font-weight: bold;
-			//	[media queries PC-tablet]
-			// ----------------------------------------
-			@include media(pc-tb) {
-				letter-spacing: .03em;
-				@include fontsize(14);
-				line-height: 1;
-			}
-			a:link {
-				color: $base_white_color;
-			}
-			a:hover {
-				color: $base_white_color;
-				text-decoration: none;
-			}
-			a:visited {
-				color: $base_white_color;
-			}
+			text-align: right;
+			vertical-align: bottom;
 		}
-	}
-	@include element(inner) {
-		padding: 20px 0;
-		.container {
-			box-sizing: border-box;
+		//	.siteTitle__navi__list
+		// ----------------------------------------
+		@include element(list) {
 			display: table;
-			width: 100%;
-			
 		}
-	}
-	@include element(logo) {
-		display: table-cell;
-		vertical-align: bottom;
-		//	[media queries SP]
+		//	.siteTitle__navi__item
 		// ----------------------------------------
-		@include media(sp) {
-			width: 30%; // 203/640
-		}
-		img {
-		}
-	}
-}
-
-
-
-// -------------------------------------------------------------------
-// 	.teaserNavi
-// -------------------------------------------------------------------
-.teaserNavi {
-	display: table-cell;
-	text-align: right;
-	vertical-align: bottom;
-	@include element(list) {
-		display: table;
-		float: right;
-	}
-	@include element(item) {
-		display: table-cell;
-		@include fontsize(16);
-		//	[media queries SP]
-		// ----------------------------------------
-		@include media(sp) {
-			@include fontsize(12);
-		}
-		@include modifier(map) {
-			a {
-				position: relative;
-				&:before {
-					position: relative;
-					display: inline-block;
-					padding-right: .6em;
-					content: url(#{$image_path}icon_map.png);
-					width: 26px;
-					height: 34px;
-					//	[media queries SP]
-					// ----------------------------------------
-					@include media(sp) {
-						padding-right: .4em;
-					}
-				}
-			}
-		}
-		@include modifier(contact) {
-			padding-left: 2em;
+		@include element(item) {
+			display: table-cell;
+			@include fontsize(16);
 			//	[media queries SP]
 			// ----------------------------------------
 			@include media(sp) {
-				padding-left: 1em;
+				@include fontsize(12);
 			}
-			a {
-				position: relative;
-				box-sizing: border-box;
-				display: inline-block;
-				padding: .4em 2em;
-				border: 1px solid $base_btn_color;
-				border-radius: $base-radius*16;
-				background: $base_white_color;
-				text-align: center;
-				@include transition(all linear .3s);
-				color: $base_btn_color;
-				//	[media queries SP]
-				// ----------------------------------------
-				@include media(sp) {
-					padding: .4em 2em;
-				}
-				&:after {
-					position: absolute;
-					top: 32%;
-					right: 16px;
-					width: 10px;
-					height: 10px;
-					content: '';
-					border-top: 1px solid $base_btn_color;
-					border-right: 1px solid $base_btn_color;
-					vertical-align: middle;
-					transform: rotate(45deg);
-				}
-				&:link {
-					color: $base_btn_color;
-					text-decoration: none;
-				}
-				&:visited {
-					color: $base_btn_color;
-					text-decoration: none;
-				}
-				&:hover {
-					text-decoration: none;
-					background: $base_btn_color;
+			//	.siteTitle__navi--map
+			// ----------------------------------------
+			@include modifier(map) {
+				a {
+					position: relative;
 					color: $base_white_color;
-					&:after {
-						border-color: $base_white_color;
-						@include transition(all .3s linear .1s);
-						right: 12px;
+					&:before {
+						position: relative;
+						display: inline-block;
+						vertical-align: middle;
+						padding-right: .6em;
+						content: url(#{$image_path}icon_map.png);
+						width: 26px;
+						height: 34px;
+						@include transition(all linear .3s);
+						//	[media queries SP]
+						// ----------------------------------------
+						@include media(sp) {
+							padding-right: .4em;
+						}
 					}
-				}	
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			//	.siteTitle__navi--contact
+			// ----------------------------------------
+			@include modifier(contact) {
+				padding-left: 2em;
+				a {
+					position: relative;
+					box-sizing: border-box;
+					display: inline-block;
+					padding: .4em 2em;
+					border: 1px solid $base_white_color;
+					border-radius: $base-radius*16;
+					background: $base_white_color;
+					text-align: center;
+					@include transition(all linear .3s);
+					color: $base_btn_color;
+					//	[media queries SP]
+					// ----------------------------------------
+					@include media(sp) {
+						padding: .4em 2em;
+					}
+					&:after {
+						position: absolute;
+						top: 32%;
+						right: 16px;
+						width: 10px;
+						height: 10px;
+						content: '';
+						border-top: 1px solid $base_btn_color;
+						border-right: 1px solid $base_btn_color;
+						vertical-align: middle;
+						transform: rotate(45deg);
+					}
+					&:link {
+						color: $base_btn_color;
+						text-decoration: none;
+					}
+					&:visited {
+						color: $base_btn_color;
+						text-decoration: none;
+					}
+					&:hover {
+						text-decoration: none;
+						background: $base_btn_color;
+						color: $base_white_color;
+						&:after {
+							border-color: $base_white_color;
+							@include transition(all .3s linear .1s);
+							right: 12px;
+						}
+					}	
+				}
 			}
 		}
 	}

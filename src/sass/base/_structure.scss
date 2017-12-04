@@ -30,11 +30,11 @@ body {
 	//	[media queries SP]
 	// ----------------------------------------
 	//	[media queries sp]
-	@include media(sp) {
-		&.is-open {
-			position: fixed;
-		}
-	}
+//	@include media(sp) {
+//		&.is-open {
+//			position: fixed;
+//		}
+//	}
 }
 
 .page {
@@ -77,7 +77,7 @@ body {
 	//	[media queries tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
-		max-width: $site_width;
+		max-width: calc( #{$site_width} + 20px );
 	}
 	//	[media queries tablet]
 	// ----------------------------------------
@@ -90,9 +90,9 @@ body {
 	@include element(inner) {
 		width: 100%;
 		margin: 0 auto;
-		//	[media queries tablet]
+		//	[media queries PC-tablet]
 		// ----------------------------------------
-		@include media(pc) {
+		@include media(pc-tb) {
 			@include clearfix;
 			max-width: $base_content_width;
 		}

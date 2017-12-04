@@ -6,12 +6,13 @@ $(function () {
 		windowH = $(window).height(),
 		windowW = $(window).width(),
 		header = $('#data-header'),
-		headerH = $(header).height(),
+		headerH = $(header).outerHeight(),
+		headerPos = $(header).offset().top,
 		contents = $('#data-contents'),
 		contentsH = $(contents).height();
-		$gNavBtn = $('#data-gNav-title'),
-		$gNavItem = $('.gNav__item a'),
-		$gNavBody = $('#data-gNav-body');
+		$gNavBtn = $('#data-gNavi-title'),
+		$gNavItem = $('.gNavi__item a'),
+		$gNavBody = $('#data-gNavi-body');
 		
 		
 	$(window).resize(function(){
@@ -54,12 +55,18 @@ $gNavBtn.on('click', function(){
 
 
 // -------------------------------------------------
-//	アンカーリンク対策
+//	fixed header
 // -------------------------------------------------
-$gNavItem.on('click', function(){
-	$body.removeClass('is-open');
-	$gNavBtn.removeClass('is-close');
-	$gNavBody.fadeOut();
+$(window).on('scroll', function() {
+	var value = $(this).scrollTop(),
+		fixedClass = 'is--fixed';
+	if ( value > headerPos ) {
+		header.addClass(fixedClass);
+//		$('#data-contents').css('margin-top', headerH);
+	} else {
+		header.removeClass(fixedClass);
+//		$('#data-contents').css('margin-top', '0');
+	}
 });
 
 
@@ -107,4 +114,54 @@ $(document).ready(function(){
 	});
 });
 
+
+// -------------------------------------------------------------------
+// colorbox
+// -------------------------------------------------------------------
+$(document).ready(function(){
+	//Examples of how to assign the Colorbox event to elements
+	$(".colorbox").colorbox({
+		maxWidth: "90%",
+		maxHeight: "90%",
+		opacity: 0.9,
+		transition: "fade"
+	});
+	$(".group1").colorbox({rel: 'group1'});
+	$(".group2").colorbox({rel: 'group2'});
+	$(".group3").colorbox({rel: 'group3'});
+	$(".group4").colorbox({rel: 'group4'});
+	$(".group5").colorbox({rel: 'group5'});
+	$(".group6").colorbox({rel: 'group6'});
+	$(".group7").colorbox({rel: 'group7'});
+	$(".group8").colorbox({rel: 'group8'});
+	$(".group9").colorbox({rel: 'group9'});
+	$(".group10").colorbox({rel: 'group10'});
+	$(".group11").colorbox({rel: 'group11'});
+
+	$(".ajax").colorbox();
+	$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+	$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+	$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+	$(".inline").colorbox({inline:true, width:"50%"});
+	$(".callbacks").colorbox({
+		onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+		onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+		onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+		onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+		onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+	});
+
+	$('.non-retina').colorbox({rel:'group5', transition:'none'})
+	$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+
+	//Example of preserving a JavaScript event for inline calls.
+	$("#click").click(function(){ 
+		$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+		return false;
+	});
+});
+
+	
+	
+	
 });

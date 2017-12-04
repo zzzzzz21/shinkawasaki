@@ -19,7 +19,7 @@
 	padding: .4em 2em;
 	border: 1px solid $base_btn_color;
 	border-radius: $base-radius*16;
-	background: $base_white_color;
+	//background: $base_white_color;
 	@include fontsize(16);
 	text-align: center;
 	@include transition(all linear .3s);
@@ -149,6 +149,7 @@
 	}
 	&:hover:before {
 		left: .2em;
+		border-color: $base_hover_color;
 	}
 }
 
@@ -160,8 +161,8 @@
 		display: inline-block;
 		margin-right: .6em;
 		content: '';
-		border-top: 2px solid $base_text_color;
-		border-right: 2px solid $base_text_color;
+		border-top: 2px solid $base_link_color;
+		border-right: 2px solid $base_link_color;
 		vertical-align: middle;
 		transform: rotate(45deg);
 		-webkit-transform: rotate(45deg);

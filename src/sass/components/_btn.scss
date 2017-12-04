@@ -84,6 +84,9 @@ a.btn-target {
 
 // 	リンクテキスト
 // ----------------------------------------
+.link-arrow {
+	@include link-arrow;
+}
 .link-target {
 	@include link-arrow;
 }

@@ -32,8 +32,8 @@ $base_title_color:	$base_corporate_color;
 // block colors
 $bg_block_concept: #f5f6f0;
 $bg_block_access: #fcf8ee;
-$bg_block_contact: #f7f8fb;
-
+$bg_block_contact: #f5f6f0;
+$bg_block_features: #f5f6f0;
 $residence_color: #aad7a3;
 $shop_color: #87d37b;
 $childcare_color: #26a65b;
@@ -48,14 +48,14 @@ $base_table_width:	100%;
 // -------------------------------------------------
 //		Link
 // -------------------------------------------------
-$base_link_color:		$base_text_color;
+$base_link_color:		#03f;
 $base_visited_color:	$base_link_color;
-$base_hover_color:		$base_corporate_color; // ↑のhover
+$base_hover_color:		lighten($base_link_color, 20%); // ↑のhover
 $base_active_color:		$base_link_color;
 $base_btn_color:		$base_corporate_color;
-$base_btn_color_hover:	$base_corporate_color; // ↑のhover
-$base_menu_color:		#f882bf;
-$base_menu_overlay:		lighten($base_menu_color, 8%);
+$base_btn_color_hover:	$base_corporate_color;
+$base_menu_color:		$base_corporate_color;
+$base_menu_overlay:		rgba($base_menu_color, .95);
 
 
 // -------------------------------------------------------------------
