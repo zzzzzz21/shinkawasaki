@@ -184,10 +184,16 @@
 // .block-room
 // -------------------------------------------------------------------
 .block-room {
-	//	.block-room__image
+	.siteIndex & {
+		background: $bg_block_features;
+	}	//	.block-room__image
 	// ----------------------------------------
 	@include element(image) {
 		margin-bottom: 4em;
+		.siteIndex & {
+			padding: 1em;
+			background: $base_white_color;
+		}
 		img {
 			width: auto;
 			height: auto;
@@ -204,10 +210,11 @@
 // .block-features
 // -------------------------------------------------------------------
 .block-features {
-	.siteIndex & {
-		background: $bg_block_features;
-	}
+//	.siteIndex & {
+//		background: $bg_block_features;
+//	}
 }
+
 
 // -------------------------------------------------------------------
 // .block-access

@@ -30,7 +30,7 @@
 			@include media(pc-tb) {
 				box-sizing: border-box;
 				width: 15%;
-				height: 46px;
+			//	height: 46px;
 				margin-right: 2%;
 				float: left;
 				border-radius: 6px 6px 0 0;
@@ -70,7 +70,6 @@
 // ----------------------------------------
 .room-anchor {
 	margin-bottom: $base_padding*3;
-	@include clearfix;
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
@@ -80,11 +79,21 @@
 	//	.room-anchor__item
 	// ----------------------------------------
 	@include element(item) {
-		width: 48%;
-		float: left;
+		display: block;
 		text-align: center;
 		&:nth-child(2n) {
-			float: right;
+			margin-top: 1.6em;
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			width: 48%;
+			float: left;
+			text-align: center;
+			&:nth-child(2n) {
+				float: right;
+				margin-top: 0;
+			}
 		}
 		a {
 			position: relative;
@@ -172,9 +181,13 @@
 			@include fontsize(36);
 		}
 	}
+	//	.room-contents__body
+	// ----------------------------------------
 	@include element(body) {
 		@include clearfix;
 	}
+	//	.room-contents__image
+	// ----------------------------------------
 	@include element(image) {
 		box-sizing: border-box;
 		width: 40%;
@@ -186,12 +199,19 @@
 		@include media(pc-tb) {
 			width: 55%;
 		}
+		img {
+			border: 1px solid $base_border_color;
+		}
+		//	.room-contents__image--note
+		// ----------------------------------------
 		@include modifier(note) {
 			margin-top: 1em;
 			color: #666;
 			@include fontsize(13);
 		}
 	}
+	//	.room-contents__main
+	// ----------------------------------------
 	@include element(main) {
 		float: left;
 		width: 55%;
@@ -211,6 +231,8 @@
 			}
 		}
 	}
+	//	.room-contents__title
+	// ----------------------------------------
 	@include element(title) {
 		display: block;
 		margin-bottom: 1em;
@@ -225,6 +247,8 @@
 			@include fontsize(40);
 		}
 	}
+	//	.room-contents__info
+	// ----------------------------------------
 	@include element(info) {
 		dt {
 			@include fontsize(36);
@@ -245,6 +269,8 @@
 			}
 		}
 	}
+	//	.room-contents__birdcage
+	// ----------------------------------------
 	@include element(birdcage) {
 		@include fontsize(13);
 		color: #999;

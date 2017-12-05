@@ -252,17 +252,6 @@
 //	[media queries PC-tablet]
 // ----------------------------------------
 @include media(pc-tb) {
-	#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1,
-	#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2,
-	#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3,
-	#panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4,
-	#panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5,
-	#panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 {
-		pointer-events: none;
-		cursor: default;
-		transform: translate(0, 1px);
-	}
-
 	#panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1:last-child,
 	#panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2:last-child,
 	#panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3:last-child,

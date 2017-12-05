@@ -32,6 +32,18 @@
 
 
 // -------------------------------------------------------------------
+// .block-planning
+// -------------------------------------------------------------------
+.block-planning {
+	.xConcept & {
+		text-align: center;
+	}
+	.block__catch {
+		color: $base_corporate_color;
+	}
+}
+
+// -------------------------------------------------------------------
 // .block-features
 // -------------------------------------------------------------------
 .block-features {
@@ -127,11 +139,11 @@
 // .feature-unit
 // -------------------------------------------------------------------
 .feature-unit {
-	margin-top: $base_padding*8;
+//	margin-top: $base_padding*8;
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
-		margin-top: $base_padding*12;
+//		margin-top: $base_padding*12;
 	}
 	//	.feature-unit__body
 	// ----------------------------------------
@@ -214,6 +226,20 @@
 		@include media(pc-tb) {
 			@include clearfix;
 			max-width: $base_content_width;
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include element(title) {
+			@include fontsize(18);
+			font-weight: bold;
+			* + & {
+				margin-top: 2em;
+			}
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(16);
+			}
 		}
 	}
 	&.is--stores {

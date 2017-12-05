@@ -62,14 +62,16 @@
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			max-width: 48%;
-			margin-bottom: $base_padding*4;
-			float: left;
-			&:nth-child(2n) {
-				float: right;
-			}
-			&:nth-last-child(-n+2) {
-				margin-bottom: 0;
+			&:not(.is--horizontal) {
+				max-width: 48%;
+				margin-bottom: $base_padding*4;
+				float: left;
+				&:nth-child(2n) {
+					float: right;
+				}
+				&:nth-last-child(-n+2) {
+					margin-bottom: 0;
+				}
 			}
 		}
 		&.is--horizontal {
@@ -91,12 +93,20 @@
 	// ----------------------------------------
 	@include element(image) {
 		display: block;
-		margin-bottom: 1em;
 	}
 	//	.photo-list__dl
 	// ----------------------------------------
 	@include element(dl) {
+		margin-top: 1em;
 		color: #999;
+		& ~ .photo-list__item {
+			margin-top: 2em;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				margin-top: 40px;
+			}
+		}
 	}
 	//	.photo-list__dt
 	// ----------------------------------------
