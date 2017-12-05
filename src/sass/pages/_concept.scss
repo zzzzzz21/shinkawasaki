@@ -84,10 +84,14 @@
 			//	[media queries PC-tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
-				width: 176px;
+				width: calc(( 100% - 90px) / 4);
 				margin-right: 30px;
 				&:nth-child(n+3) {
 					margin-top: 0;
+				}
+				img {
+					width: 100%;
+					height: auto;
 				}
 			}
 			figcaption {
