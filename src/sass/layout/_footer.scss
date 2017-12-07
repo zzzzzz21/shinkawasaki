@@ -121,18 +121,15 @@
 					// ----------------------------------------
 					@include media(pc-tb) {
 						margin-top: 0;
+						margin-left: 2em;
 					}
 				}
 				span {
-					//	[media queries sp]
-					// ----------------------------------------
-					@include media(sp) {
-						display: block;
-					}
+					display: block;
 					//	[media queries PC-tablet]
 					// ----------------------------------------
 					@include media(pc-tb) {
-						padding-right: .6em;
+						margin-bottom: .6em;
 					}
 				}
 				img {

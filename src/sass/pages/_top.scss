@@ -40,6 +40,12 @@
 	position: static;
 	text-align: center;
 	padding: 10px;
+	//	[media queries SP]
+	// ----------------------------------------
+	@include media(sp) {
+		background: $base_corporate_color;
+		color: $base_white_color;
+	}
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
@@ -71,15 +77,14 @@
 	// ----------------------------------------
 	@include element(title) {
 		margin-bottom: $base_padding;
-		@include fontsize(24);
-		color: $base_corporate_color;
+		@include fontsize(30);
+		color: $base_white_color;
 		line-height: 1.2;
 		font-family: $base_font_family_noto;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
 			@include fontsize(64);
-			color: $base_white_color;
 			text-shadow: 0 0 5px $base_text_color;
 			font-family: $base_font_family;
 			font-weight: normal;
@@ -97,12 +102,11 @@
 	//	.mainCopy__body
 	// ----------------------------------------
 	@include element(body) {
-		color: $base_text_color;
+		color: $base_white_color;
 		@include fontsize(14);
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			color: $base_white_color;
 			@include fontsize(16);
 		}
 	}
@@ -113,19 +117,17 @@
 		display: inline-block;
 		margin-top: 2em;
 		padding: .6em 2em;
-		border: 2px solid $base_corporate_color;
+		border: 2px solid $base_white_color;
 		@include fontsize(14);
-		color: $base_corporate_color;
+		color: $base_white_color;
 		font-weight: bold;
 		text-align: center;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			margin-top: 8em;
-			border-color: $base_white_color;
+			margin-top: 4em;
 			float: right;
 			@include fontsize(16);
-			color: $base_white_color;
 		}
 	}
 }
@@ -154,9 +156,9 @@
 	text-align: center;
 }
 .block-concept {
-	.siteIndex & {
-		background-color: $bg_block_concept;
-	}
+//	.siteIndex & {
+//		background-color: $bg_block_concept;
+//	}
 }
 
 
@@ -164,6 +166,9 @@
 // .block-planning
 // -------------------------------------------------------------------
 .block-planning {
+	.siteIndex & {
+		background: $bg_planning_color;
+	}
 	.block__foot {
 		a {
 			img {
@@ -185,15 +190,11 @@
 // -------------------------------------------------------------------
 .block-room {
 	.siteIndex & {
-		background: $bg_block_features;
+//		background: $bg_block_features;
 	}	//	.block-room__image
 	// ----------------------------------------
 	@include element(image) {
 		margin-bottom: 4em;
-		.siteIndex & {
-			padding: 1em;
-			background: $base_white_color;
-		}
 		img {
 			width: auto;
 			height: auto;
@@ -210,9 +211,9 @@
 // .block-features
 // -------------------------------------------------------------------
 .block-features {
-//	.siteIndex & {
-//		background: $bg_block_features;
-//	}
+	.siteIndex & {
+		background: $bg_block_features;
+	}
 }
 
 

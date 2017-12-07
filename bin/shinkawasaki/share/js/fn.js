@@ -5,6 +5,7 @@ $(function () {
 		break_point_sp = 768,
 		windowH = $(window).height(),
 		windowW = $(window).width(),
+		siteTitle =$('.siteTitle__navi__item--contact'),
 		header = $('#data-header'),
 		headerH = $(header).outerHeight(),
 		headerPos = $(header).offset().top,
@@ -61,9 +62,12 @@ $(window).on('scroll', function() {
 	var value = $(this).scrollTop(),
 		fixedClass = 'is--fixed';
 	if ( value > headerPos ) {
+		siteTitle.fadeIn();
+		$('#data-siteTitle').addClass(fixedClass);
 		header.addClass(fixedClass);
 //		$('#data-contents').css('margin-top', headerH);
 	} else {
+		$('#data-siteTitle').removeClass(fixedClass);
 		header.removeClass(fixedClass);
 //		$('#data-contents').css('margin-top', '0');
 	}

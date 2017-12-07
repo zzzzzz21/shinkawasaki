@@ -153,6 +153,7 @@
 #panel-5-ctrl:checked ~ #panels #panel-5 .panel-contents,
 #panel-6-ctrl:checked ~ #panels #panel-6 .panel-contents {
 	max-height: initial;
+	max-height: 100%;
 	opacity: 1;
 	padding: 20px 10px;
 	//	[media queries PC-tablet]

@@ -144,11 +144,23 @@
 		//	.page-block__title--sub
 		// ----------------------------------------
 		@include modifier(sub) {
+			position: relative;
 			display: inline-block;
-			padding-left: 1em;
+			padding-left: 2em;
 			@include fontsize(16);
 			font-weight: normal;
 			vertical-align: middle;
+			&:before, &:after {
+				position: relative;
+				padding: 0 .6em;
+				@include fontsize(16);
+			}
+			&:before {
+				content: '［';
+			}
+			&:after {
+				content: '］';
+			}
 		}
 	}
 	//	.page-block__body

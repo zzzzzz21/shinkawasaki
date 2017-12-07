@@ -173,4 +173,37 @@
 			}
 		}
 	}
+	
+	//	[media queries PC-tablet]
+	// ----------------------------------------
+	@include media(pc-tb) {
+		&.is--fixed {
+			position: fixed;
+			z-index: 100;
+			bottom: 60px;
+			right: 0;
+			background: transparent;
+			.siteTitle__inner {
+				width: 100%;
+				max-width: 100%;
+			}
+			.siteTitle__navi {
+				width: 98%;
+				@include element(list) {
+					width: 100%;
+				}
+			}
+			.siteTitle__shoulder, .siteTitle__navi__item--map {
+				display: none;
+			}
+			.siteTitle__navi__item--contact {
+				width: 100%;
+				display: block;
+				@include transition(all .3s linear .3s);
+				a {
+					border: 1px solid $base_corporate_color;
+				}
+			}
+		}
+	}
 }

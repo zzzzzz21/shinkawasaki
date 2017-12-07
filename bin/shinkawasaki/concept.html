@@ -101,13 +101,13 @@
 		<p><a href="#data-header">目次へジャンプ</a></p>
 		<p><a href="#data-contents">本文へジャンプ</a></p>
 	</div>
-	<div class="siteTitle">
+	<div id="data-siteTitle" class="siteTitle">
 		<section class="siteTitle__inner">
 			<h1 class="siteTitle__shoulder"><a href="index.html">ジェイアール東日本都市開発の高品質賃貸マンション　<br class="is-sp">View Lieto（びゅうリエット）新川崎</a></h1>
 			<nav class="siteTitle__navi">
 				<ul class="siteTitle__navi__list">
 					<li class="siteTitle__navi__item siteTitle__navi__item--map"><a href="location.html" title="現地案内図">現地案内図</a></li>
-					<li class="siteTitle__navi__item siteTitle__navi__item--contact"><a href="http://www.taisei-pro.com/form/input/" target="_blank" title="お問い合わせ">お問い合わせ</a></li>
+					<li class="siteTitle__navi__item siteTitle__navi__item--contact"><a href="http://www.taisei-pro.com/form/input/" target="_blank">お問い合わせ</a></li>
 				</ul>
 			</nav>
 		</section>
@@ -128,7 +128,7 @@
 								<li class="gNavi__item is-room" itemprop="name"><a href="room.html" title="ルームタイプ" itemprop="url"><span class="en">Room Plan</span><span class="ja">ルームプラン</span></a></li>
 								<li class="gNavi__item is-equipment" itemprop="name"><a href="equipment.html" title="設備" itemprop="url"><span class="en">Equipment</span><span class="ja">設備仕様</span></a></li>
 								<li class="gNavi__item is-outline" itemprop="name"><a href="outline.html" title="物件概要" itemprop="url"><span class="en">Outline</span><span class="ja">物件概要</span></a></li>
-								<li class="gNavi__item is-vr" itemprop="name"><a href="#TODO" title="サンプルルームをパノラマで体感!!" itemprop="url"><span class="en">360° VR</span><span class="ja">360° VR</span></a></li>
+								<li class="gNavi__item is-vr" itemprop="name"><a href="https://taisei-pro.theta360.biz/t/aeb80882-d5b8-11e7-8557-06a0de727cf7-1" target="_blank" title="サンプルルームをパノラマで体感!!" itemprop="url"><span class="en">360° VR</span><span class="ja">360° VR</span></a></li>
 								<li class="gNavi__item is-access" itemprop="name"><a href="access.html" title="アクセス" itemprop="url"><span class="en">Access</span><span class="ja">アクセス</span></a></li>
 								<li class="gNavi__item is-sp is-contact" itemprop="name"><a href="http://www.taisei-pro.com/form/input/" target="_blank" title="お問い合わせ" itemprop="url"><span class="en">Contact</span><span class="ja">お問い合わせ</span></a></li>
 							</ul>
@@ -185,7 +185,7 @@
 						</div>
 						<div class="feature-unit__text">
 							<p>全6タイプとバリエーション豊富な間取りに加え、「浴室乾燥」「追い焚き」「無料インターネット」「オートロック」など、日々を快適にサポートする設備を採用。<br>
-								子育て世代からシニア世代まで、多様なライフスタイルに対応する居住空間。</p>
+								子育て世代からシニア世代まで、多様なライフスタイルに対応する居住空間を目指しました。</p>
 						</div>
 					</section>
 				</div>
@@ -210,48 +210,56 @@
 						</div>
 					</div>
 				</section>
-				<!-- /[.block-planning] --->
+				<!-- /[.block-planning] -->
 				<section class=" block__body container">
 					<h3 class="block__catch"><span class="block__catch--main">毎日の暮らしを彩る敷地内の設備</span></h3>
 					<ul class="block-features__list">
 						<li class="block-features__list__item">
-							<figure>
-								<img src="images/concept/photo_shop.png" alt="Shop">
-								<figcaption>
-									<span class="block-features__list__title">Shop</span>
-									<span>ショップ</span>
-								</figcaption>
-							</figure>
+							<a href="#feature-shop">
+								<figure>
+									<img src="images/concept/photo_shop.png" alt="Shop">
+									<figcaption>
+										<span class="block-features__list__title">Shop</span>
+										<span>ショップ</span>
+									</figcaption>
+								</figure>
+							</a>
 							<p>毎日の生活をちょっと便利に。デイリーユースの店舗が生活に楽しみと彩りを。</p>
 						</li>
 						<li class="block-features__list__item">
-							<figure>
-								<img src="images/concept/photo_childcare.png" alt="Childcare">
-								<figcaption>
-									<span class="block-features__list__title">Childcare</span>
-									<span>子育て支援</span>
-								</figcaption>
-							</figure>
-							<p>未来を担う子どもを育む、保育園や学童施設などが敷地内に併設。</p>
+							<a href="#feature-childcare">
+								<figure>
+									<img src="images/concept/photo_childcare.png" alt="Childcare">
+									<figcaption>
+										<span class="block-features__list__title">Childcare</span>
+										<span>子育て支援</span>
+									</figcaption>
+								</figure>
+							</a>
+							<p>未来を担う子どもを育む、保育園や学童施設などが併設。</p>
 						</li>
 						<li class="block-features__list__item">
-							<figure>
-								<img src="images/concept/photo_welfare.png" alt="Welfare">
-								<figcaption>
-									<span class="block-features__list__title">Welfare</span>
-									<span>高齢者福祉</span>
-								</figcaption>
-							</figure>
+							<a href="#feature-welfare">
+								<figure>
+									<img src="images/concept/photo_welfare.png" alt="Welfare">
+									<figcaption>
+										<span class="block-features__list__title">Welfare</span>
+										<span>高齢者福祉</span>
+									</figcaption>
+								</figure>
+							</a>
 							<p>「NRE弥生テラス新川崎」（介護付き有料老人ホーム）などが隣接。</p>
 						</li>
 						<li class="block-features__list__item">
-							<figure>
-								<img src="images/concept/photo_community.png" alt="Community">
-								<figcaption>
-									<span class="block-features__list__title">Community</span>
-									<span>コミュニティ形成</span>
-								</figcaption>
-							</figure>
+							<a href="#feature-community">
+								<figure>
+									<img src="images/concept/photo_community.png" alt="Community">
+									<figcaption>
+										<span class="block-features__list__title">Community</span>
+										<span>コミュニティ形成</span>
+									</figcaption>
+								</figure>
+							</a>
 							<p>さまざまな庭、交流室、テラスや公園空間など共用部が充実</p>
 						</li>
 					</ul>
@@ -285,7 +293,7 @@
 							<figure><img src="images/concept/image_childcare.jpg" alt="Childcare"></figure>
 						</div>
 						<div class="feature-unit__text">
-							<p>未来を担う子どもを育む、「にじいろ保育園北加瀬」<sup class="is--notice">＊</sup>や学童施設などが敷地内に隣接します。植栽により柔らかく区切られた街で、地域に暮らす人たちに優しく見守られながら、すくすく育つ子どもたちのの声が明るく響き渡ります。</p>
+							<p>未来を担う子どもを育む、「にじいろ保育園北加瀬」<sup class="is--notice">＊</sup>や学童施設などが隣接します。植栽により柔らかく区切られた街で、地域に暮らす人たちに優しく見守られながら、すくすく育つ子どもたちのの声が明るく響き渡ります。</p>
 							<p class="notice-text is--notice"><sup class="is--notice">＊</sup>2018年4月開所予定、川崎市認可保育園。入園者は川崎市が募集・審査の上決定するため、当物件居住者が優先されることはありません。</p>
 						</div>
 					</section>
@@ -317,7 +325,7 @@
 								<figure><img src="images/concept/image_community.jpg" alt="Community"></figure>
 							</div>
 							<div class="feature-unit__text">
-								<p>さまざまな庭、コミュニティラウンジ、テラスや公園空間など、共用部が充実。マンションに住まう子どもからシニアだけでなく、周辺に住まう方たちも集い、気軽に楽しく過ごせる、場所が広がります。</p>
+								<p>さまざまな庭、コミュニティラウンジ、テラスや公園空間など、共用部が充実。マンションに住まう子どもからシニアだけでなく、周辺に住まう方たちも集い、気軽に楽しく過ごせる場所が広がります。</p>
 							</div>
 						</section>
 					</div>
@@ -357,7 +365,7 @@
 		
 		<div class="block block-room">
 			<div class="banner-360 container">
-				<a href="" target="_blank" title="サンプルルームをパノラマで体感!!">
+				<a href="https://taisei-pro.theta360.biz/t/aeb80882-d5b8-11e7-8557-06a0de727cf7-1" target="_blank" title="サンプルルームをパノラマで体感!!">
 					<img src="share/images/banner_360.png"
 	 srcset="share/images/banner_360_sp.png 767w,share/images/banner_360.png" alt="サンプルルームをパノラマで体感!!">
 					<span>VRコンテンツページはこちら</span>
@@ -391,9 +399,9 @@
 			</h2>
 			<div class="block__body container">
 				<div class="container__inner">
-					<h3 class="block-contact__title">＜媒介＞</h3>
+					<h3 class="block-contact__title">＜貸主＞</h3>
 					<p><a href="http://www.jrtk.jp/" target="_blank" title="ジェイアール東日本都市開発"><img src="share/images/logo_jrtk.png" alt="ジェイアール東日本都市開発"></a></p>
-					<h3 class="block-contact__title">＜貸主代理＞</h3>
+					<h3 class="block-contact__title">＜媒介＞</h3>
 					<p><a href="http://www.taisei-pro.com/" target="_blank" title="タイセイ・ハウジー・プロパティ"><img src="share/images/logo_taisei-hs.png" alt="タイセイ・ハウジー・プロパティ"></a></p>
 					<p class="block-contact__body">武蔵小杉営業所<br>営業時間／10:00～18:00　<br class="is-sp">定休日／水曜日（1月～3月は無休）</p>
 					<p><a href="http://www.taisei-pro.com/form/input/" class="btn-contact" target="_blank" tite="お問い合わせ">メールでお問い合わせ</a></p>
@@ -422,12 +430,12 @@
 			</div>
 			<div class="container">
 				<ul class="globalFooter--foot__navi">
-					<li class="globalFooter--foot__navi__item"><a href="http://www.taisei-pro.com/form/input/" target="_blank" title="お問い合わせ">お問い合わせ</a></li>
+					<li class="globalFooter--foot__navi__item"><a href="http://www.taisei-pro.com/form/input/" target="_blank">お問い合わせ</a></li>
 					<li class="globalFooter--foot__navi__item"><a href="http://www.jrtk.jp/" target="_blank" title="運営会社">運営会社</a></li>
 					<li class="globalFooter--foot__navi__item"><a href="http://www.taisei-pro.com/privacy.html" target="_blank" title="プライバシーポリシー">プライバシーポリシー</a></li>
 				</ul>
 				<ul class="globalFooter--foot__logo">
-					<li class="globalFooter--foot__logo__item"><span>＜媒介＞</span><a href="http://www.jrtk.jp/" target="_blank" title="ジェイアール東日本都市開発"><img src="share/images/logo_jrtk.png" alt="ジェイアール東日本都市開発"></a>
+					<li class="globalFooter--foot__logo__item"><span>＜貸主＞</span><a href="http://www.jrtk.jp/" target="_blank" title="ジェイアール東日本都市開発"><img src="share/images/logo_jrtk.png" alt="ジェイアール東日本都市開発"></a>
 					</li>
 					<li class="globalFooter--foot__logo__item"><span>＜貸主代理＞</span><a href="http://www.taisei-hs.com/" title="タイセイ・ハウジー"><img src="share/images/logo_thp.png" alt="タイセイ・ハウジー・プロパティ" class="globalFooter--foot__logo--thp"></a></li>
 				</ul>

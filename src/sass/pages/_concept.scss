@@ -106,6 +106,9 @@
 					height: auto;
 				}
 			}
+			a {
+				color: $base_text_color;
+			}
 			figcaption {
 				@include fontsize(12);
 			}
@@ -139,11 +142,11 @@
 // .feature-unit
 // -------------------------------------------------------------------
 .feature-unit {
-//	margin-top: $base_padding*8;
+	margin-top: $base_padding*6;
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
-//		margin-top: $base_padding*12;
+		margin-top: $base_padding*8;
 	}
 	//	.feature-unit__body
 	// ----------------------------------------
