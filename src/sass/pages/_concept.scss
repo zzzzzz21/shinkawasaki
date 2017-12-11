@@ -165,7 +165,7 @@
 	@include element(title) {
 		margin-bottom: 1.5em;
 		text-align: center;
-		@include fontsize(18);
+		@include fontsize(30);
 		font-family: $base_font_family_noto;
 		font-weight: normal;
 		//	[media queries PC-tablet]
@@ -246,6 +246,7 @@
 		}
 	}
 	&.is--stores {
+		display: none;
 		.block__catch {
 			color: $base_corporate_color;
 		}

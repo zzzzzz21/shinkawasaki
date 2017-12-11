@@ -17,7 +17,7 @@
 	.gotoTop {
 		position: fixed;
 		z-index: 10000;
-		bottom: $base_padding*3;
+		bottom: $base_padding*.6;
 		right: 20px;
 		@include opacity(.6);
 		//	[media queries PC-tablet]
@@ -126,10 +126,15 @@
 				}
 				span {
 					display: block;
-					//	[media queries PC-tablet]
-					// ----------------------------------------
-					@include media(pc-tb) {
-						margin-bottom: .6em;
+				}
+				//	[media queries PC-tablet]
+				// ----------------------------------------
+				@include media(pc-tb) {
+					span {
+						margin-bottom: 1em;
+					}
+					&:nth-child(2) span {
+						margin-bottom: .5em;
 					}
 				}
 				img {
