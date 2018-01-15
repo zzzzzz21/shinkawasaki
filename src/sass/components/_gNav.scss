@@ -45,7 +45,7 @@
 		}
 		img {
 			width: auto;
-			height: 36px;
+			height: 30px;
 			//	[media queries tablet]
 			// ----------------------------------------
 			@include media(pc-tb) {
@@ -68,7 +68,6 @@
 	//	background: $base_menu_color;
 		cursor: pointer;
 		z-index: 1100;
-		@include transition(all linear .5s);
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
@@ -159,6 +158,21 @@
 					transform: rotate(-315deg);
 				}
 			}
+		}
+	}
+	// 	.gNavi__catch
+	// ----------------------------------------
+	@include element(catch) {
+		position: absolute;
+		left: 114px;
+		top: 0;
+		padding: .4em 1em;
+		border: 1px solid $base_text_color;
+		@include fontsize(13);
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			display: none;
 		}
 	}
 	// 	.gNavi__body::MENU本体

@@ -113,9 +113,10 @@
 	//	.mainCopy__foot
 	// ----------------------------------------
 	@include element(foot) {
+		position: relative;
 		box-sizing:border-box;
 		display: inline-block;
-		margin-top: 2em;
+		margin: 2em 0 1em auto;
 		padding: .6em 2em;
 		border: 2px solid $base_white_color;
 		@include fontsize(14);
@@ -125,9 +126,29 @@
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
-			margin-top: 4em;
-			float: right;
+			display: block;
+			width: 22em;
+			margin-left: auto;
 			@include fontsize(16);
+		}
+	}
+	//	.mainCopy__catch
+	// ----------------------------------------
+	@include element(catch) {
+		display: none;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			position: relative;
+			color: $base_white_color;
+			font-weight: bold;
+			letter-spacing: .12em;
+			display: block;
+			width: 352px;
+			margin-left: auto;
+			@include fontsize(36);
+			text-align: center;
+			text-shadow: 0 0 5px #333;
 		}
 	}
 }

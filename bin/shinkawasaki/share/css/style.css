@@ -692,7 +692,7 @@ body:not(.siteIndex) .globalHeader {
 
 .gNavi .siteTitle__logo img {
 	width: auto;
-	height: 36px;
+	height: 30px;
 }
 
 .gNavi__title {
@@ -707,9 +707,6 @@ body:not(.siteIndex) .globalHeader {
 	padding: 12px 8px;
 	cursor: pointer;
 	z-index: 1100;
-	-webkit-transition: all linear 0.5s;
-	-moz-transition: all linear 0.5s;
-	transition: all linear 0.5s;
 }
 
 .is-open .gNavi__title {
@@ -805,6 +802,16 @@ body:not(.siteIndex) .globalHeader {
 .is-open .gNavi__title > span > span:after {
 	-webkit-transform: rotate(-315deg);
 	transform: rotate(-315deg);
+}
+
+.gNavi__catch {
+	position: absolute;
+	left: 114px;
+	top: 0;
+	padding: .4em 1em;
+	border: 1px solid #333;
+	font-size: 13px;
+	font-size: 1.3rem;
 }
 
 .gNavi__contents {
@@ -1245,6 +1252,10 @@ a.btn-target:after {
 	height: 100%;
 }
 
+.google-map .map-canvas iframe {
+	border: none;
+}
+
 .google-map .link-gmap {
 	padding: 1em 0;
 	text-align: right;
@@ -1682,6 +1693,8 @@ a.btn-target:after {
 .siteTitle__shoulder {
 	margin: 0;
 	padding: .6em 0;
+	font-size: 12px;
+	font-size: 1.2rem;
 	font-weight: normal;
 	text-align: center;
 }
@@ -1697,6 +1710,12 @@ a.btn-target:after {
 
 .siteTitle__shoulder a:visited {
 	color: #fff;
+}
+
+.siteTitle__shoulder--catch {
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: bold;
 }
 
 .siteTitle__navi {
@@ -2187,9 +2206,10 @@ body:not(.siteIndex) .banner-360 {
 }
 
 .mainCopy__foot {
+	position: relative;
 	box-sizing: border-box;
 	display: inline-block;
-	margin-top: 2em;
+	margin: 2em 0 1em auto;
 	padding: .6em 2em;
 	border: 2px solid #fff;
 	font-size: 14px;
@@ -2197,6 +2217,10 @@ body:not(.siteIndex) .banner-360 {
 	color: #fff;
 	font-weight: bold;
 	text-align: center;
+}
+
+.mainCopy__catch {
+	display: none;
 }
 
 .siteIndex .contents .block,
@@ -3079,6 +3103,10 @@ body:not(.siteIndex) .access-unit__title {
 	font-size: 1.2rem;
 }
 
+.gNavi__catch {
+	display: none;
+}
+
 .gNavi__body {
 	float: right;
 }
@@ -3376,6 +3404,8 @@ body:not(.siteIndex) .access-unit__title {
 }
 
 .siteTitle__shoulder {
+	font-size: 12px;
+	font-size: 1.2rem;
 	text-align: left;
 	letter-spacing: .03em;
 	line-height: 1;
@@ -3556,10 +3586,25 @@ body:not(.siteIndex) .access-unit__title {
 }
 
 .mainCopy__foot {
-	margin-top: 4em;
-	float: right;
+	display: block;
+	width: 22em;
+	margin-left: auto;
 	font-size: 16px;
 	font-size: 1.6rem;
+}
+
+.mainCopy__catch {
+	position: relative;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: .12em;
+	display: block;
+	width: 352px;
+	margin-left: auto;
+	font-size: 36px;
+	font-size: 3.6rem;
+	text-align: center;
+	text-shadow: 0 0 5px #333;
 }
 
 * + .block-access__image {
@@ -3910,6 +3955,12 @@ body:not(.siteIndex) .access-unit__title {
 }
 
 @media screen and (max-width: 767px) {
+
+body.is-open {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
 
 img {
 	width: 100%;

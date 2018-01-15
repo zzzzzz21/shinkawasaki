@@ -47,11 +47,13 @@
 	@include element(shoulder) {
 		margin: 0;
 		padding: .6em 0;
+		@include fontsize(12);
 		font-weight: normal;
 		text-align: center;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
+			@include fontsize(12);
 			text-align: left;
 			letter-spacing: .03em;
 			line-height: 1;
@@ -65,6 +67,12 @@
 		}
 		a:visited {
 			color: $base_white_color;
+		}
+		//	.siteTitle__shoulder--catch
+		// ----------------------------------------
+		@include modifier(catch) {
+			@include fontsize(18);
+			font-weight: bold;
 		}
 	}
 	//	.siteTitle__navi

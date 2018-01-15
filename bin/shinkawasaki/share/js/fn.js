@@ -42,18 +42,36 @@ $(function () {
 // -------------------------------------------------------------------
 // gNav
 // -------------------------------------------------------------------
+var state = false;
+var scrollpos;
 $gNavBtn.on('click', function(){
 	if ($(this).hasClass('is-close')) {
-		$(this).removeClass('is-close');
-		$body.removeClass('is-open');
-		$gNavBody.fadeOut();
 	} else {
+	}
+
+	if(state == false) {
+		scrollpos = $(window).scrollTop();
 		$(this).addClass('is-close');
-		$body.addClass('is-open');
+		$body.addClass('is-open').addClass('body--active').css({'top': -scrollpos});
 		$gNavBody.fadeIn();
+		state = true;
+	} else {
+		$(this).removeClass('is-close');
+		$body.removeClass('is-open').css({'top': 0});
+		$gNavBody.fadeOut();
+		window.scrollTo( 0 , scrollpos );
+		state = false;
 	}
 });
-
+$gNavBody.on('click', function(){
+	if(state == true){
+		$gNavBtn.removeClass('is-close');
+		$body.removeClass('is-open').css({'top': 0});
+		$gNavBody.fadeOut();
+		window.scrollTo( 0 , scrollpos );
+		state = false;
+	}
+});
 
 // -------------------------------------------------
 //	fixed header

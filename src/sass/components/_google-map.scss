@@ -18,6 +18,9 @@
 			width: 100%;
 			height: 100%;	
 		}
+		iframe {
+			border: none;
+		}
 		//	[media queries PC]
 		// ----------------------------------------
 		@include media(pc) {
