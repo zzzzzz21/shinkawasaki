@@ -151,6 +151,33 @@
 			text-shadow: 0 0 5px #333;
 		}
 	}
+	//	.mainCopy__information
+	// ----------------------------------------
+	@include element(information) {
+		.btn-detail:link,
+		.btn-detail:visited {
+			background: $base_white_color;
+		}
+		.btn-detail:hover {
+			background: $base_corporate_color;
+			border-color: $base_white_color;
+		}
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			position: relative;
+			color: $base_white_color;
+			font-weight: bold;
+			display: block;
+			width: 352px;
+			margin-left: auto;
+			@include fontsize(18);
+			text-align: center;
+			.btn-detail:hover {
+				border-color: $base_corporate_color;
+			}
+		}
+	}
 }
 // -------------------------------------------------------------------
 // .block

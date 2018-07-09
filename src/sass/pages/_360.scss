@@ -1,0 +1,59 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_360.scss
+//  Date:	2018-2-14(UTC+9)
+//  Note:	
+// ===================================================================
+.block-vr {}
+//	.vr-list
+// ----------------------------------------
+.vr-list {
+	& + & {
+		margin-top: 60px;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 80px;
+		}
+	}
+	//	.vr-list__titile
+	// ----------------------------------------
+	@include element(title) {
+		@extend .photo-list__title;
+		border-color: $base_corporate_color;
+	}
+	//	.vr-list__body
+	// ----------------------------------------
+	@include element(body) {
+	}
+	//	.vr-list__description
+	// ----------------------------------------
+	@include element(description) {
+		margin-top: 1em;
+		color: #999;
+		//	.vr-list__description--main
+		// ----------------------------------------
+		@include modifier(main) {
+			@include fontsize(18);
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(24);
+			}
+		}
+		//	.vr-list__description--note
+		// ----------------------------------------
+		@include modifier(note) {}
+		//	.vr-list__description--link
+		// ----------------------------------------
+		@include modifier(link) {
+			text-align: right;
+		}
+	}
+}
+
+
+//	[media queries PC-tablet]
+// ----------------------------------------
+@include media(pc-tb) {
+}

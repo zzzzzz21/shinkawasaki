@@ -1,0 +1,24 @@
+@charset "utf-8";
+// ===================================================================
+//  File:	pages/_facilities.scss
+//  Date:	2017-12-04(UTC+9)
+//  Note:	
+// ===================================================================
+.facilities-detail {
+	.photo-list__title {
+		border-color: $base_corporate_color;
+	}
+	.block__foot {
+		a {
+			img {
+				display: block;
+				width: auto;
+				height: auto;
+				margin: 0 auto .6em;
+			}
+			span {
+				@include link-arrow;
+			}
+		}
+	}
+}

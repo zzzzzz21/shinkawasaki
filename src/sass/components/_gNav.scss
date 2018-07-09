@@ -166,9 +166,11 @@
 		position: absolute;
 		left: 114px;
 		top: 0;
-		padding: .4em 1em;
-		border: 1px solid $base_text_color;
 		@include fontsize(13);
+		color: $base_corporate_color;
+		padding: .4em 1em;
+		border: 1px solid $base_corporate_color;
+		border-radius: 4px;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
@@ -259,6 +261,7 @@
 			.xConcept &.is-concept a,
 			.xRoom &.is-room a,
 			.xEquipment &.is-equipment a,
+			.xFacilities &.is-facilities a,
 			.xOutline &.is-outline a,
 			.xAccess &.is-access a {
 				border-color: $base_white_color;
@@ -285,6 +288,9 @@
 			vertical-align: bottom;
 			&.is-concept {
 				border-left: 1px solid $base_border_color;
+			}
+			&.is-pc {
+				display: inline-block;
 			}
 			> a, >span {
 				padding: .6em 1.2em;
@@ -316,8 +322,11 @@
 			&:hover,
 			.xConcept &.is-concept,
 			.xRoom &.is-room,
+			.xLocation &.is-location,
 			.xEquipment &.is-equipment,
+			.xFacilities &.is-facilities,
 			.xOutline &.is-outline,
+			.xVR &.is-vr,
 			.xAccess &.is-access {
 				&:after {
 					color: $base_corporate_color;
@@ -327,7 +336,10 @@
 			.xConcept &.is-concept,
 			.xRoom &.is-room,
 			.xEquipment &.is-equipment,
+			.xLocation &.is-location,
+			.xFacilities &.is-facilities,
 			.xOutline &.is-outline,
+			.xVR &.is-vr,
 			.xAccess &.is-access {
 				.en {
 					display: none;

@@ -181,21 +181,18 @@
 			}
 		}
 	}
-	
+	//	.mainCopy__information
+	// ----------------------------------------
+	.mainCopy__information {
+		display: none;
+	}
 	//	[media queries PC-tablet]
 	// ----------------------------------------
 	@include media(pc-tb) {
 		&.is--fixed {
 			position: fixed;
 			z-index: 100;
-			bottom: 60px;
-			right: -140px;
-			width: auto;
 			background: transparent;
-			@include transition(right .3s linear .1s);
-			&:hover {
-				right: 0;
-			}
 			.siteTitle__inner {
 				width: auto;
 				max-width: 100%;
@@ -210,11 +207,46 @@
 				display: none;
 			}
 			.siteTitle__navi__item--contact {
+				position: fixed;
 				width: auto;
 				display: block;
 				@include transition(all .3s linear .3s);
+				bottom: 60px;
+				right: -91px;
+				width: auto;
+				background: transparent;
+				&:hover {
+					right: 0;
+				}
 				a {
 					border: 1px solid $base_corporate_color;
+				}
+			}
+			//	.mainCopy__information
+			// ----------------------------------------
+			.mainCopy__information {
+				position: fixed;
+				width: auto;
+				display: block;
+				@include transition(all .3s linear .3s);
+				bottom: 120px;
+				right: -139px;
+				width: auto;
+				letter-spacing: .12em;
+				&:hover {
+					right: 0;
+				}
+				.btn-detail {
+					background: $base_corporate_color;
+					color: $base_white_color;
+					font-weight: normal;
+					&:hover {
+						background-color: $base_white_color;
+						color: $base_corporate_color;
+						&:after {
+							border-color: $base_corporate_color;
+						}
+					}
 				}
 			}
 		}

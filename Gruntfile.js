@@ -136,7 +136,9 @@ module.exports = function(grunt) {
 			dev: {
 				bsFiles: {
 					src : [
+						'<%= dir.bin %>/*.css',
 						'<%= dir.bin %>/**/*.css',
+						'<%= dir.bin %>/**/**/*.css',
 						'<%= dir.bin %>/**/*.jpg',
 						'<%= dir.bin %>/**/*.png',
 						'<%= dir.bin %>/**/*.gif',

@@ -42,6 +42,26 @@
 		// ----------------------------------------
 		@include media(pc-tb) {
 			@include fontsize(32);
+			display: table;
+			width: 100%;
+		}
+		.title--en, .title--ja {
+			display: block;
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				display: table-cell;
+			}
+		}
+		.title--ja {
+			display: block;
+			@include fontsize(14);
+			//	[media queries PC-tablet]
+			// ----------------------------------------
+			@include media(pc-tb) {
+				@include fontsize(18);
+				text-align: right;
+			}
 		}
 	}
 	//	.photo-list__body
@@ -52,13 +72,13 @@
 		// ----------------------------------------
 		@include media(pc-tb) {
 			@include clearfix;
-			margin-top: $base_padding*4;
+			margin-top: $base_padding*2;
 		}
 	}
 	//	.photo-list__item
 	// ----------------------------------------
 	@include element(item) {
-		margin-bottom: 2em;
+		margin-bottom: $base_padding*2;
 		//	[media queries PC-tablet]
 		// ----------------------------------------
 		@include media(pc-tb) {
@@ -97,7 +117,7 @@
 	//	.photo-list__dl
 	// ----------------------------------------
 	@include element(dl) {
-		margin-top: 1em;
+		margin-top: 1.2em;
 		color: #999;
 		& ~ .photo-list__item {
 			margin-top: 2em;
@@ -122,9 +142,23 @@
 			@include fontsize(24);
 		}
 	}
+	//	.photo-list__label
+	// ----------------------------------------
+	@include element(label) {
+		display: inline-block;
+		margin-right: .8em;
+		padding: .6em;
+		background-color: $base_label_color;
+		line-height: 1;
+		color: $base_white_color;
+	}
 	//	.photo-list__description
 	// ----------------------------------------
 	@include element(description) {
+		.photo-list__body + &,
+		.photo-list__image + & {
+			margin-top: 1em;
+		}
 	}
 }
 
@@ -202,6 +236,16 @@
 	}
 }
 
+.is--horizontal {
+	& + & {
+		margin-top: 30px;
+		//	[media queries PC-tablet]
+		// ----------------------------------------
+		@include media(pc-tb) {
+			margin-top: 40px;
+		}
+	} 
+}
 
 // ----------------------------------------
 //	.note-list

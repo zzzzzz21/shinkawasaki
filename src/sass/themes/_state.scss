@@ -70,6 +70,10 @@
 	color: $base_notice_color;
 }
 
+.is--attention {
+	color: $base_notice_color;
+}
+
 .notice-text {
 	@include fontsize(13);
 }

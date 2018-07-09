@@ -249,5 +249,8 @@
 		@include media(pc) {
 			float: right;
 		}
+		&:before {
+			top: 22%;
+		}
 	}
 }

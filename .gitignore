@@ -98,3 +98,5 @@ release/
 /design
 /debug.log
 /bin/*.htaccess
+/bin/shinkawasaki/*.htaccess
+/bin/shinkawasaki/*.htpasswd
